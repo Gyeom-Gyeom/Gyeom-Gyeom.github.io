@@ -1,2 +1,2 @@
 # jungyeom.github.io
-My Portfolio Web
+Gyeom's Portfolio Web
