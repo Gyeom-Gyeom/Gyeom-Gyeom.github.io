@@ -18,29 +18,50 @@ body[dark-mode="light"]{
     color: var(--clr-dark);
 }
 
+/* icon is 전등 */
 #dark-mode-changer{
     position: absolute;
     top:30px;
     right:30px;
 
-    --size: 100px;
-    border-radius: 50%;
-    width: var(--size);
-    aspect-ratio: 1;
-
-    width: 60px;
-    height:30px;
+    --size: 30px;
+    
+    width: calc(2 * var(--size));
+    height: var(--size);
     border-radius: 15px;
 
     cursor: pointer;
 
     text-align: center;
-    /* line-height: var(--size); */
+    line-height: var(--size);
 
     background-color: aquamarine;
     /* color: var(--clr-dark); */
 
-    box-shadow: 2px 5px 5px #555;
+    /* box-shadow: 2px 5px 5px #555; */
+}
+
+/* icon 뭐 쓸지 정해야할듯 */
+#font-color-changer{
+    position: absolute;
+    top:80px;
+    right:30px;
+
+    --size: 30px;
+    border-radius: 50%;
+    width: var(--size);
+    height: var(--size);
+    aspect-ratio: 1;
+
+    line-height: var(--size);
+
+    cursor: pointer;
+
+    text-align: center;
+
+    background-color: olive;
+
+    /* box-shadow: 2px 5px 5px #555; */
 }
 
 ul{
@@ -53,7 +74,7 @@ ul{
 
 #myPicture{
     position: absolute;
-    right: 10px;
+    right: 100px;
     height: 100px;
 }
 
@@ -133,7 +154,13 @@ ul{
     cursor: pointer;
 }
 
+span[portionColor="orange"]{
+    color: orange;
+}
 
+span[portionColor="olive"]{
+    color: olive;
+}
 
 
 

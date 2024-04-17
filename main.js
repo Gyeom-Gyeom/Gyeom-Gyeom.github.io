@@ -8,6 +8,17 @@ document.getElementById("dark-mode-changer").addEventListener("click", function(
     }
 });
 
+// Font Color Mode
+document.getElementById("font-color-changer").addEventListener("click", function() {
+    const text = document.querySelector("span[portionColor]");
+    // querySelector 정확하게 공부해야댐
+    if (text.getAttribute("portionColor") === "orange") {
+        text.setAttribute("portionColor", "olive");
+    } else {
+        text.setAttribute("portionColor", "orange");
+    }
+});
+
 // Infinite Scroller
 const scrollers = document.querySelectorAll(".scroller");
 
