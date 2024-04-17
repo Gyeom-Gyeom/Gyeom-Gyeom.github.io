@@ -1,3 +1,4 @@
+// Infinite Scroller
 const scrollers = document.querySelectorAll(".scroller");
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
@@ -7,10 +8,10 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
 function addAnimation(){
     scrollers.forEach((scroller)=>{
         scroller.setAttribute("data-animated", true);
-
+        
         const scrollerInner = scroller.querySelector(".scroller_inner");
         const scrollerContent = Array.from(scrollerInner.children);
-
+        
         scrollerContent.forEach(item => {
             const duplicatedItem = item.cloneNode(true);
             duplicatedItem.setAttribute("aria-hidden", true);
@@ -18,3 +19,9 @@ function addAnimation(){
         });
     });
 }
+
+// Dark Mode
+const darkModeChanger = document.getElementById("dark-mode-changer");
+
+darkModeChanger.addEventListener("click");
+
