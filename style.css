@@ -1,5 +1,13 @@
-body{
+/* body{} */
+
+body[dark-mode="dark"]{
     background-color: #141414;
+    color: #EFF8FE;
+}
+
+body[dark-mode="light"]{
+    background-color: #EFF8FE;
+    color: #141414;
 }
 
 ul{
