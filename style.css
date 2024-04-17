@@ -29,7 +29,7 @@ body[dark-mode="light"]{
     cursor: pointer;
 
     text-align: center;
-    line-height: var(--size);
+    /* line-height: var(--size); */
 
     background-color: aquamarine;
     color: #141414;
@@ -43,6 +43,12 @@ ul{
 
 #home{
     color: #dfdfdf;
+}
+
+#myPicture{
+    position: absolute;
+    right: 10px;
+    height: 100px;
 }
 
 .home-contents{
