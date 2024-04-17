@@ -1,4 +1,6 @@
-/* body{} */
+body{
+    margin: 0;
+}
 
 body[dark-mode="dark"]{
     background-color: #141414;
@@ -8,6 +10,10 @@ body[dark-mode="dark"]{
 body[dark-mode="light"]{
     background-color: #EFF8FE;
     color: #141414;
+}
+
+#dark-mode-changer{
+    position: absolute;
 }
 
 ul{
