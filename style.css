@@ -19,14 +19,13 @@ body[dark-mode="light"]{
     color: var(--clr-dark);
 }
 
-/* icon is 전등 */
+/* Dark Mode */
 #dark-mode-changer{
     position: absolute;
     top:30px;
     right:30px;
 
     --size: 40px;
-    
     width: calc(2 * var(--size));
     height: var(--size);
     border-radius: 15px;
@@ -36,10 +35,56 @@ body[dark-mode="light"]{
     text-align: center;
     line-height: var(--size);
 
-    background-color: aquamarine;
-    /* color: var(--clr-dark); */
+    background-color: var(--clr-concept);
+    mix-blend-mode: difference;
 
     /* box-shadow: 2px 5px 5px #555; */
+}
+
+#dark-light{
+    justify-content: space-around;
+}
+
+/* .fa-sun .fa-moon .fa-plane{
+    position: absolute;
+} */
+
+.fa-sun{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left:  1rem;
+}
+
+.fa-sun[dark-mode="light"]{
+    display: none;
+}
+
+.fa-moon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+}
+
+.fa-moon[dark-mode="dark"]{
+    display: none;
+}
+
+.fa-plane[dark-mode="light"]{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    transition: 0.5s;
+}
+
+.fa-plane[dark-mode="dark"]{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    right: 1rem;
+    transition: 0.5s;
 }
 
 /* icon 뭐 쓸지 정해야할듯 */

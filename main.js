@@ -1,11 +1,9 @@
 // Dark Mode
 document.getElementById("dark-mode-changer").addEventListener("click", function() {
-    const body = document.body;
-    if (body.getAttribute("dark-mode") === "dark") {
-        body.setAttribute("dark-mode", "light");
-    } else {
-        body.setAttribute("dark-mode", "dark");
-    }
+    const curMode = document.body.getAttribute("dark-mode");
+    const newMode = curMode==="dark"? "light": "dark";
+    const darkModes = document.querySelectorAll("[dark-mode]");
+    darkModes.forEach(mode => { mode.setAttribute("dark-mode", newMode); });
 });
 
 // Color Changer
