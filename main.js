@@ -17,7 +17,7 @@ callPalette.addEventListener("click", function() {
     let newSate = curState==="false"? "true": "false";
     callPalette.setAttribute("is-appear", newSate);
 
-    colorPalette.style.top = newSate==="true"? "160px": "-500px";
+    colorPalette.style.top = newSate==="true"? "11rem": "-500px";
 });
 
 const clrCircles = document.querySelectorAll(".clr-circle");

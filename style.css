@@ -31,8 +31,8 @@ body[dark-mode="light"]{
 /* Dark Mode */
 #dark-mode-changer{
     position: absolute;
-    top:30px;
-    right:30px;
+    top:    4rem;
+    right:  4rem;
 
     --size: 40px;
     width: calc(var(--size) *2);
@@ -42,11 +42,8 @@ body[dark-mode="light"]{
     cursor: pointer;
 
     text-align: center;
-    line-height: var(--size);
 
     mix-blend-mode: difference;
-
-    /* box-shadow: 2px 5px 5px #555; */
 }
 
 #dark-light{
@@ -103,8 +100,8 @@ body[dark-mode="light"]{
     background: var(--clr-dark);
     
     position: absolute;
-    top:100px;
-    right:100px;
+    top:    8rem;
+    right:  4rem;
     
     cursor: pointer;
 
@@ -127,8 +124,8 @@ body[dark-mode="light"]{
     background: var(--clr-dark);
 
     position: absolute;
-    top:-500px;
-    right:30px;
+    top:    -500px;
+    right:  4rem;
 
     transition: top 0.7s ease-in-out;
 
