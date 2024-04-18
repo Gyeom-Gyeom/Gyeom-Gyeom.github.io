@@ -8,15 +8,28 @@ document.getElementById("dark-mode-changer").addEventListener("click", function(
     }
 });
 
-// Font Color Mode
-document.getElementById("font-color-changer").addEventListener("click", function() {
-    const text = document.querySelector("span[portionColor]");
-    // querySelector 정확하게 공부해야댐
-    if (text.getAttribute("portionColor") === "orange") {
-        text.setAttribute("portionColor", "olive");
-    } else {
-        text.setAttribute("portionColor", "orange");
-    }
+// Color Changer
+const colorChanger = document.getElementById("color-changer");
+colorChanger.addEventListener("click", function() {
+    let newWidth = colorChanger.style.width==="240px"? "40px": "240px";
+    colorChanger.style.width = newWidth;
+    
+    let colorCircles = document.querySelectorAll(".color-circle");
+    let circleDiameter = newWidth === "240px" ? "30px" : "0px";
+    colorCircles.forEach(circle => {
+        circle.style.width = circleDiameter;
+        circle.style.height = circleDiameter;
+    });
+});
+
+const colorCircles = document.querySelectorAll(".color-circle");
+colorCircles.forEach(circle => {
+    circle.addEventListener("click", function() {
+        let color = this.style.backgroundColor;
+        let span = document.querySelector("span[portionColor]");
+        span.style.color = color;
+        span.setAttribute("portionColor", color);
+    });
 });
 
 // Infinite Scroller

@@ -24,7 +24,7 @@ body[dark-mode="light"]{
     top:30px;
     right:30px;
 
-    --size: 30px;
+    --size: 40px;
     
     width: calc(2 * var(--size));
     height: var(--size);
@@ -42,13 +42,13 @@ body[dark-mode="light"]{
 }
 
 /* icon 뭐 쓸지 정해야할듯 */
-#font-color-changer{
+#color-changer{
     position: absolute;
     top:80px;
     right:30px;
 
-    --size: 30px;
-    border-radius: 50%;
+    --size: 40px;
+    border-radius: calc(var(--size) /2);
     width: var(--size);
     height: var(--size);
     aspect-ratio: 1;
@@ -61,8 +61,34 @@ body[dark-mode="light"]{
 
     background-color: olive;
 
+    transition: width 0.7s ease-in-out;
+
+    display: flex;
+    justify-content: space-around;
+
     /* box-shadow: 2px 5px 5px #555; */
 }
+
+.color-circle {
+    position: relative;
+    width: 0px;
+    transition: width 0.7s ease-in-out;
+    
+    height: 0px;
+    transition: height 0.7s ease-in-out;
+
+    border-radius: 50%;
+    top:50%;
+    transform: translateY(-50%);
+    
+    cursor: pointer;
+}
+
+span[portionColor="orange"] { color: orange; }
+span[portionColor="pink"] { color: pink; }
+span[portionColor="red"] { color: red; }
+span[portionColor="blue"] { color: blue; }
+span[portionColor="green"] { color: green; }
 
 ul{
     list-style: none;
@@ -72,8 +98,10 @@ ul{
     color: #dfdfdf;
 } */
 
+/* My Picture */
 #myPicture{
     position: absolute;
+    top: 500px;
     right: 100px;
     height: 100px;
 }
@@ -161,7 +189,6 @@ span[portionColor="orange"]{
 span[portionColor="olive"]{
     color: olive;
 }
-
 
 
 
