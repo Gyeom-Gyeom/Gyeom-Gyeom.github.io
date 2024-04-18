@@ -12,10 +12,10 @@
     </head>
     <!-- <body dark-mode="light"> -->
     <body dark-mode="light">
-        <div id="cursor"></div>
+        <div id="cursor" concept-background-color="concept"></div>
 
         <!-- Dark Mode -->
-        <div id="dark-mode-changer" concept-color="concept">
+        <div id="dark-mode-changer" concept-background-color="concept">
             <div id="dark-light">
                 <i dark-mode="light" class="fa-solid fa-sun"></i>
                 <i dark-mode="light" class="fa-solid fa-moon"></i>
@@ -23,17 +23,8 @@
             <i dark-mode="light" class="fa-solid fa-plane"></i>
         </div>
 
-        <!-- Color Changer -->
-        <div id="color-changer">
-            <div class="color-circle" style="background-color: red;"></div>
-            <div class="color-circle" style="background-color: blue;"></div>
-            <div class="color-circle" style="background-color: green;"></div>
-            <div class="color-circle" style="background-color: orange;"></div>
-            <div class="color-circle" style="background-color: pink;"></div>
-        </div>
-
         <!-- Color Palette -->
-        <button id="call-palette" is-appear="false">
+        <button id="call-palette" is-appear="false" concept-background-color="concept">
             <i class="fa-solid fa-palette"></i>
         </button>
         <div id="clr-palette">
@@ -42,6 +33,7 @@
             <div class="clr-circle" style="background-color: green;"></div>
             <div class="clr-circle" style="background-color: orange;"></div>
             <div class="clr-circle" style="background-color: pink;"></div>
+            <div class="clr-circle" style="background-color: transparent;"></div>
         </div>
 
         <div id="home">

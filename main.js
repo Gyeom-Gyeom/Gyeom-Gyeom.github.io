@@ -6,27 +6,6 @@ document.getElementById("dark-mode-changer").addEventListener("click", function(
     darkModes.forEach(mode => { mode.setAttribute("dark-mode", newMode); });
 });
 
-// Color Changer
-const colorChanger = document.getElementById("color-changer");
-colorChanger.addEventListener("click", function() {
-    let newWidth = colorChanger.style.width==="240px"? "40px": "240px";
-    colorChanger.style.width = newWidth;
-    
-    let colorCircles = document.querySelectorAll(".color-circle");
-    let circleDiameter = newWidth === "240px" ? "30px" : "0px";
-    colorCircles.forEach(circle => {
-        circle.style.width = circleDiameter;
-        circle.style.height = circleDiameter;
-    });
-});
-
-const colorCircles = document.querySelectorAll(".color-circle");
-colorCircles.forEach(circle => {
-    circle.addEventListener("click", function() {
-        let color = circle.style.backgroundColor;
-        document.documentElement.style.setProperty('--clr-concept', color);
-    });
-});
 
 // Color Palette
 const colorPalette = document.getElementById("clr-palette");
@@ -38,10 +17,16 @@ callPalette.addEventListener("click", function() {
     let newSate = curState==="false"? "true": "false";
     callPalette.setAttribute("is-appear", newSate);
 
-    colorPalette.style.right = newSate==="true"? "100px": "-300px";
+    colorPalette.style.top = newSate==="true"? "160px": "-500px";
 });
 
-
+const clrCircles = document.querySelectorAll(".clr-circle");
+clrCircles.forEach(circle => {
+    circle.addEventListener("click", function() {
+        let color = circle.style.backgroundColor;
+        document.documentElement.style.setProperty('--clr-concept', color);
+    });
+});
 
 // Infinite Scroller
 const scrollers = document.querySelectorAll(".scroller");

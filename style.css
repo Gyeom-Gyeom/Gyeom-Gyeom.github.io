@@ -9,6 +9,10 @@
     color: var(--clr-concept);
 }
 
+[concept-background-color="concept"] {
+    background-color: var(--clr-concept);
+}
+
 body{
     margin:     2rem;
     padding:    2rem;
@@ -40,7 +44,6 @@ body[dark-mode="light"]{
     text-align: center;
     line-height: var(--size);
 
-    background-color: var(--clr-dark);
     mix-blend-mode: difference;
 
     /* box-shadow: 2px 5px 5px #555; */
@@ -88,41 +91,16 @@ body[dark-mode="light"]{
     transition: 0.5s;
 }
 
-/* icon 뭐 쓸지 정해야할듯 */
-#color-changer{
-    position: absolute;
-    top:80px;
-    right:30px;
 
-    --size: 40px;
-    border-radius: calc(var(--size) /2);
-    width: var(--size);
-    height: var(--size);
-    aspect-ratio: 1;
 
-    line-height: var(--size);
-
-    cursor: pointer;
-    
-    text-align: center;
-    
-    background-color: olive;
-    
-    transition: width 0.7s ease-in-out;
-    
-    display: flex;
-    justify-content: space-around;
-    
-    /* box-shadow: 2px 5px 5px #555; */
-}
-
+/* Color Palette */
 #call-palette{
     --size: 40px;
     width:  40px;
     aspect-ratio: 1;
     border-radius: 50%;
 
-    background: #141414;
+    background: var(--clr-dark);
     
     position: absolute;
     top:100px;
@@ -138,44 +116,40 @@ body[dark-mode="light"]{
 }
 
 #clr-palette{
-    --size: 200px;
-    width:  var(--size);
-    height: var(--size);
-    border-radius: calc(var(--size)/ 10);
+    --diameter: 30px;
+    --margin:   10px;
+    --size-width: calc(var(--diameter) *3 + var(--margin) *6);
+    --size-height: calc(var(--diameter) *2 + var(--margin) *4);
+    width:  var(--size-width);
+    height: var(--size-height);
+    border-radius: calc(var(--size-width)/ 5);
 
-    background: #141414;
+    background: var(--clr-dark);
 
     position: absolute;
-    top:140px;
-    right:-300px;
+    top:-500px;
+    right:30px;
 
-    transition: right 0.7s ease-in-out;
+    transition: top 0.7s ease-in-out;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
 }
 
 .clr-circle{
-    --diameter: 30px;
+    margin: var(--margin);
     width:  var(--diameter);
     height: var(--diameter);
     border-radius:  50%;
-}
-
-
-
-
-.color-circle {
-    position: relative;
-    width: 0px;
-    transition: width 0.7s ease-in-out;
-
-    height: 0px;
-    transition: height 0.7s ease-in-out;
-
-    border-radius: 50%;
-    top:50%;
-    transform: translateY(-50%);
 
     cursor: pointer;
 }
+
+
+
 
 ul{
     list-style: none;
@@ -278,8 +252,6 @@ ul{
     width:  var(--size);
     height: var(--size);
     border-radius: 50%;
-    background-color: rgba(0, 255, 0, 0.6);
-    background-color: var(--clr-concept);
 }
 
 
