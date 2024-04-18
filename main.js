@@ -23,10 +23,8 @@ colorChanger.addEventListener("click", function() {
 const colorCircles = document.querySelectorAll(".color-circle");
 colorCircles.forEach(circle => {
     circle.addEventListener("click", function() {
-        let color = this.style.backgroundColor;
-        let span = document.querySelector("span[portionColor]");
-        span.style.color = color;
-        span.setAttribute("portionColor", color);
+        let color = circle.style.backgroundColor;
+        document.documentElement.style.setProperty('--clr-concept', color);
     });
 });
 

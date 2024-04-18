@@ -4,6 +4,11 @@
     --clr-concept:  orange;
 }
 
+/* Concept Color */
+[concept-color="concept"] {
+    color: var(--clr-concept);
+}
+
 body{
     margin:     2rem;
     padding:    2rem;
@@ -26,16 +31,16 @@ body[dark-mode="light"]{
     right:30px;
 
     --size: 40px;
-    width: calc(2 * var(--size));
+    width: calc(var(--size) *2);
     height: var(--size);
-    border-radius: 15px;
+    border-radius: calc(var(--size) /2);
 
     cursor: pointer;
 
     text-align: center;
     line-height: var(--size);
 
-    background-color: var(--clr-concept);
+    background-color: var(--clr-dark);
     mix-blend-mode: difference;
 
     /* box-shadow: 2px 5px 5px #555; */
@@ -44,10 +49,6 @@ body[dark-mode="light"]{
 #dark-light{
     justify-content: space-around;
 }
-
-/* .fa-sun .fa-moon .fa-plane{
-    position: absolute;
-} */
 
 .fa-sun{
     position: absolute;
@@ -176,12 +177,6 @@ body[dark-mode="light"]{
     cursor: pointer;
 }
 
-span[portionColor="orange"] { color: orange; }
-span[portionColor="pink"] { color: pink; }
-span[portionColor="red"] { color: red; }
-span[portionColor="blue"] { color: blue; }
-span[portionColor="green"] { color: green; }
-
 ul{
     list-style: none;
 }
@@ -244,8 +239,6 @@ ul{
 }
 
 .scroller[data-animated="true"] .scroller_inner{
-    /* --animation-duration:20s; */
-    /* --animation-direction:forwards; */
     width: max-content;
     flex-wrap: nowrap;
     animation:
@@ -274,18 +267,10 @@ ul{
     cursor: pointer;
 }
 
-span[portionColor="orange"]{
-    color: orange;
-}
-
-span[portionColor="olive"]{
-    color: olive;
-}
 
 
 
-
-
+/* Mouse Cursor */
 #cursor{
     position: absolute;
     transform: translate(-50%, -50%);
@@ -295,9 +280,6 @@ span[portionColor="olive"]{
     border-radius: 50%;
     background-color: rgba(0, 255, 0, 0.6);
     background-color: var(--clr-concept);
-
-    transition: top  0.1s;
-    transition: left 0.1s;
 }
 
 
