@@ -69,3 +69,32 @@ function addAnimation(){
     });    
 }    
 
+// Cursor
+const cursor = document.getElementById(`cursor`);
+
+function isTouchDevice(){
+    try{
+        document.createEvent(`TouchEvent`);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
+
+function move(e){
+    let x, y;
+    try{
+        x = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
+        y = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
+    } catch (error){}
+    cursor.style.left = x + "px";
+    cursor.style.top = y + "px";
+};
+
+document.addEventListener("mousemove", (e)=>{
+    move(e);
+});
+
+document.addEventListener("touchmove", (e)=>{
+    move(e);
+});
