@@ -32,6 +32,21 @@ colorCircles.forEach(circle => {
     });
 });
 
+// Color Palette
+const colorPalette = document.getElementById("clr-palette");
+
+// Call Palette
+const callPalette = document.getElementById("call-palette");
+callPalette.addEventListener("click", function() {
+    let curState = callPalette.getAttribute("is-appear");
+    let newSate = curState==="false"? "true": "false";
+    callPalette.setAttribute("is-appear", newSate);
+
+    colorPalette.style.right = newSate==="true"? "100px": "-300px";
+});
+
+
+
 // Infinite Scroller
 const scrollers = document.querySelectorAll(".scroller");
 
