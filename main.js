@@ -28,52 +28,39 @@ clrCircles.forEach(circle => {
     });
 });
 
+
+
 // Infinite Scroller
-document.addEventListener("DOMContentLoaded", function() {
-    const scrollers = document.querySelectorAll(".scroller");
-    scrollers.forEach((scroller) => {
-        const scrollerInner = scroller.querySelector(".scroller_inner");
-        const scrollerContent = Array.from(scrollerInner.children);
-        let scrollAmount = 0;
-        const itemWidth = scrollerContent[0].offsetWidth;
-
-        function animateScroll() {
-            scrollAmount += 2; // 매 프레임마다 스크롤될 픽셀 수
-
-            if (scrollAmount >= itemWidth) {
-                // 첫 번째 항목을 맨 뒤로 옮기고 스크롤 양을 재설정
-                scrollerInner.appendChild(scrollerInner.firstChild);
-                scrollAmount = 0;
-            }
-
-            // 스크롤 위치 업데이트
-            scrollerInner.style.transform = `translateX(-${scrollAmount}px)`;
-
-            // 다음 애니메이션 프레임 예약
-            requestAnimationFrame(animateScroll);
-        }
-
-        // 애니메이션 시작
-        requestAnimationFrame(animateScroll);
-    });
-});
-
-
-
 // document.addEventListener("DOMContentLoaded", function() {
-//     scrollers.forEach((scroller)=>{
-//         scroller.setAttribute("data-animated", true);
-        
+//     const scrollers = document.querySelectorAll(".scroller");
+//     scrollers.forEach((scroller) => {
 //         const scrollerInner = scroller.querySelector(".scroller_inner");
 //         const scrollerContent = Array.from(scrollerInner.children);
-        
-//         scrollerContent.forEach(item => {
-//             const duplicatedItem = item.cloneNode(true);
-//             duplicatedItem.setAttribute("aria-hidden", true);
-//             scrollerInner.appendChild(duplicatedItem);
-//         });    
+//         let scrollAmount = 0;
+//         const itemWidth = scrollerContent[0].offsetWidth;
+
+//         function animateScroll() {
+//             scrollAmount += 2; // 매 프레임마다 스크롤될 픽셀 수
+
+//             if (scrollAmount >= itemWidth) {
+//                 // 첫 번째 항목을 맨 뒤로 옮기고 스크롤 양을 재설정
+//                 scrollerInner.appendChild(scrollerInner.firstChild);
+//                 // scrollAmount = 0;
+//             }
+
+//             // 스크롤 위치 업데이트
+//             scrollerInner.style.transform = `translateX(-${scrollAmount}px)`;
+
+//             // 다음 애니메이션 프레임 예약
+//             requestAnimationFrame(animateScroll);
+//         }
+
+//         // 애니메이션 시작
+//         requestAnimationFrame(animateScroll);
 //     });
-// }); 
+// });
+
+
 
 // Cursor
 const cursor = document.getElementById(`cursor`);

@@ -199,7 +199,7 @@ ul{
 
 .scroller_inner{
     padding-block: 1rem;
-    display: flex;
+    /* display: flex; */
     gap: 1rem;
     flex-wrap: wrap;
 }
@@ -342,6 +342,8 @@ footer{
     height: var(--height);
     width: var(--width);
     padding: var(--padding);
+
+    cursor: pointer;
 }
 
 .dynamic-div:hover #code-right{
