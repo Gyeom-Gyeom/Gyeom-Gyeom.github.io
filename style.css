@@ -172,6 +172,10 @@ ul{
     width: 55rem;
 }
 
+#dynamic-text{
+    cursor: text;
+}
+
 .home-contents{
     margin:0;
     padding-inline: 0;
@@ -305,11 +309,6 @@ ul{
             width: 100vw;
             bottom: 0;
             height: 10rem;
-            background: linear-gradient(
-                165deg,
-                transparent 85%,
-                var(--clr-concept)
-            );
             /* background-color: red; */
         }
 

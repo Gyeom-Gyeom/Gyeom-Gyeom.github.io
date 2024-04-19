@@ -79,3 +79,43 @@ document.addEventListener("mousemove", (e)=>{
 document.addEventListener("touchmove", (e)=>{
     move(e);
 });
+
+
+// Dynamic Text
+document.addEventListener("DOMContentLoaded", function() {
+    const phrases = ["ASML TS Engineer", "Front-End Engineer", "Web Designer"];
+    const phrases_num = phrases.length;
+    let currentPhraseIndex = 0;
+    const textElement = document.getElementById("dynamic-text");
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        let currentPhrase = phrases[currentPhraseIndex];
+        let displayText = currentPhrase.substring(0, charIndex);
+
+        if (isDeleting) {
+            if (charIndex > 0) {
+                charIndex--;
+                displayText = currentPhrase.substring(0, charIndex);
+            } else {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases_num;
+            }
+        } else {
+            if (charIndex <= currentPhrase.length) {
+                charIndex++;
+                displayText = currentPhrase.substring(0, charIndex);
+            } else {
+                setTimeout(() => {
+                    isDeleting = true;
+                }, 1000);
+            }
+        }
+
+        textElement.textContent = displayText;
+        setTimeout(type, isDeleting ? 100 : 150);
+    }
+
+    setTimeout(type, 2000);
+});
