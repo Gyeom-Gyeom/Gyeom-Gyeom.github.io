@@ -83,7 +83,7 @@ document.addEventListener("touchmove", (e)=>{
 
 // Dynamic Text
 document.addEventListener("DOMContentLoaded", function() {
-    const phrases = ["ASML TS Engineer", "Front-End Engineer", "Web Designer"];
+    const phrases = ["Semiconductor Engineer", "Front-End Engineer", "Web Designer"];
     const phrases_num = phrases.length;
     let currentPhraseIndex = 0;
     const textElement = document.getElementById("dynamic-text");

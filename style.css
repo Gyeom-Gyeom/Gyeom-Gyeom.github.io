@@ -313,7 +313,7 @@ ul{
         }
 
         .code-right:hover .fa-copyright{
-            animation: rotate2pi 1s linear;
+            animation: rotate2pi 1s linear infinite;
         }
 
         @keyframes rotate2pi{
