@@ -143,8 +143,6 @@ body[dark-mode="light"]{
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
-
-    mix-blend-mode: difference;
 }
 
 .clr-circle{
@@ -154,8 +152,6 @@ body[dark-mode="light"]{
     border-radius:  50%;
 
     cursor: pointer;
-
-    mix-blend-mode: difference;
 }
 
 
