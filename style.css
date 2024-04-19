@@ -20,6 +20,7 @@
 }
 
 body{
+    cursor:     none;
     margin:     2rem;
     padding:    2rem;
 }
@@ -112,6 +113,8 @@ body[dark-mode="light"]{
     cursor: pointer;
 
     color: #EFF8FE;
+
+    mix-blend-mode: difference;
 }
 
 .fa-palette{
@@ -140,6 +143,8 @@ body[dark-mode="light"]{
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
+
+    mix-blend-mode: difference;
 }
 
 .clr-circle{
@@ -149,6 +154,8 @@ body[dark-mode="light"]{
     border-radius:  50%;
 
     cursor: pointer;
+
+    mix-blend-mode: difference;
 }
 
 
@@ -209,114 +216,139 @@ ul{
         white 20%, 
         white 80%, 
         transparent
-        );
-        mask: linear-gradient(
-            90deg, 
-            transparent, 
-            white 20%, 
-            white 80%, 
-            transparent
-            );
-        }
-        
-        .scroller[data-animated="true"] .scroller_inner{
-            width: max-content;
-            flex-wrap: nowrap;
-            animation:
-            scroll
-            var(--animation-duration, 10s)
-            var(--animation-direction, forwards)
-            linear
-            infinite;
-        }
-        
-        .scroller[data-direction="right"]{
-            --animation-direction: reverse;
-        }
-        
-        .scroller[data-direction="left"]{
-            --animation-direction: forwards;
-        }
-        
-        @keyframes scroll{
-            to{
-                transform: translate(-100%);
-            }
-        }
-        
-        .home-content{
-            cursor: pointer;
-        }
-        
-        
-        
-        
-        /* Mouse Cursor */
-        #cursor{
-            position: absolute;
-            transform: translate(-50%, -50%);
-            --size: 1rem;
-            width:  var(--size);
-            height: var(--size);
-            border-radius: 50%;
-            mix-blend-mode: difference;
-        }
-        
-        
-        /* My Picture Accessory */
-        #my-picture-accessory{
-            position: absolute;
-            top: 4rem;
-            right: calc(4rem + 10rem);
-            --height-picture: 20rem;
-            --width:    25rem;
-            --height:   30rem;
-            height: var(--height);
-            width:  var(--width);
-        }
-        
-        .nieun{
-            position: absolute;
-            height: var(--height);
-            width:  var(--width);
-        }
+    );
+    mask: linear-gradient(
+        90deg, 
+        transparent, 
+        white 20%, 
+        white 80%, 
+        transparent
+    );
+}
 
-        .nieun-horz{
-            position: absolute;
-            width:10rem;
-            height:1rem;
-        }
+.scroller[data-animated="true"] .scroller_inner{
+    width: max-content;
+    flex-wrap: nowrap;
+    animation:
+    scroll
+    var(--animation-duration, 10s)
+    var(--animation-direction, forwards)
+    linear
+    infinite;
+}
+
+.scroller[data-direction="right"]{
+    --animation-direction: reverse;
+}
+
+.scroller[data-direction="left"]{
+    --animation-direction: forwards;
+}
+
+@keyframes scroll{
+    to{
+        transform: translate(-100%);
+    }
+}
+
+.home-content{
+    cursor: pointer;
+    mix-blend-mode: difference;
+}
         
-        .nieun-vert{
-            position: absolute;
-            width:1rem;
-            height:10rem;
-        }
-
-        /* My Picture */
-        #myPicture{
-            position: absolute;
-            top:    50%;
-            left:   50%;
-            transform: translate(-50%, -50%);
-            height: var(--height-picture);
-        }
         
+        
+        
+/* Mouse Cursor */
+#cursor{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width:  var(--size, 1rem);
+    height: var(--size, 1rem);
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
 
-        /* Footer */
-        footer{
-            position: fixed;
-            width: 100vw;
-            bottom: 0;
-            height: 10rem;
-            /* background-color: red; */
-        }
+/* My Picture Accessory */
+#my-picture-accessory{
+    position: absolute;
+    top: 4rem;
+    right: calc(4rem + 10rem);
+    --height-picture: 20rem;
+    --width:    25rem;
+    --height:   30rem;
+    height: var(--height);
+    width:  var(--width);
+}
 
-        .code-right:hover .fa-copyright{
-            animation: rotate2pi 1s linear infinite;
-        }
+.nieun{
+    position: absolute;
+    height: var(--height);
+    width:  var(--width);
+    mix-blend-mode: difference;
+}
 
-        @keyframes rotate2pi{
-            from{ transform: rotate(0deg); }
-            to{ transform: rotate(360deg); }
-        }
+.nieun-horz{
+    position: absolute;
+    width:10rem;
+    height:1rem;
+}
+
+.nieun-vert{
+    position: absolute;
+    width:1rem;
+    height:10rem;
+}
+
+/* My Picture */
+#myPicture{
+    position: absolute;
+    top:    50%;
+    left:   50%;
+    transform: translate(-50%, -50%);
+    height: var(--height-picture);
+}
+
+
+/* Footer */
+footer{
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    height: 10rem;
+    /* background-color: red; */
+}
+
+#code-right{
+    overflow: hidden;
+    height: var(--height);
+    width: var(--width);
+    padding: var(--padding);
+    z-index: 2;
+    border: 1px var(--clr-concept) solid;
+    border-radius: 3rem;
+}
+
+#code-right:hover .fa-copyright{
+    animation: rotate2pi 1s linear infinite;
+}
+
+@keyframes rotate2pi{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+/* Dynamic Div */
+.dynamic-div {
+    --width: 10rem;
+    --height: 1rem;
+    --padding: 1rem;
+    height: var(--height);
+    width: var(--width);
+    padding: var(--padding);
+}
+
+.dynamic-div:hover #code-right{
+    background-color: var(--clr-concept);
+    mix-blend-mode: difference;
+}
