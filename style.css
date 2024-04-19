@@ -162,6 +162,12 @@ ul{
     color: #dfdfdf;
 } */
 
+#home-introduction{
+    font-family: "Edu QLD Beginner", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
 
 .home-contents{
     margin:0;
@@ -274,14 +280,12 @@ ul{
             position: absolute;
             width:10rem;
             height:1rem;
-            border-radius: 0 5rem;
         }
         
         .nieun-vert{
             position: absolute;
             width:1rem;
             height:10rem;
-            border-radius: 0 5rem;
         }
 
         /* My Picture */
