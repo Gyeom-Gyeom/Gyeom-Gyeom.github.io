@@ -80,7 +80,7 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
     width:  1rem;
     aspect-ratio: 1;
     border-radius: 50%;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
     background: var(--clr-concept);
 }
 
@@ -207,20 +207,17 @@ ul{ list-style: none; }
 .home-contents li{
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem -0.25rem #000;
 }
 
 #home-nav-about{
     width: 100%;
     font-size: 2rem;
-    mix-blend-mode: difference;
 }
 
 .home-content{
     width: 100%;
     font-size: 3rem;
     cursor: pointer;
-    mix-blend-mode: difference;
     text-align: right;
 }
 
@@ -287,7 +284,6 @@ footer{
     width: 100vw;
     bottom: 0;
     height: 10rem;
-    /* background-color: red; */
 }
 
 
