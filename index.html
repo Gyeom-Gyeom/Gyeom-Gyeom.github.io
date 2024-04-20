@@ -20,7 +20,7 @@
     </head>
 
     <body dark-mode="dark">
-        <div id="cursor" concept-background-color="concept"></div>
+        <div id="cursor"></div>
 
         <!-- Dark Mode -->
         <div id="dark-mode-changer" concept-background-color="concept">
@@ -44,42 +44,52 @@
             <div class="clr-circle" style="background-color: transparent;"></div>
         </div>
 
-
+        <!-- Home -->
         <div id="home">
-            <div id="home-introduction">
-                <h1 id="my-introduction">
-                    Hello, My name is <span concept-color="concept">Jun Gyeom</span>.
-                    <br>
-                    I'm <span id="dynamic-text" concept-color="concept"></span>.
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur ab corrupti unde repellendus necessitatibus eligendi dolorem reprehenderit expedita. Exercitationem.
-                </h1>
+            <div class="home-left">
+                <div id="home-introduction">
+                    <h1 id="my-introduction">
+                        Hello, My name is <span concept-color="concept">Jun Gyeom</span>.
+                        <br>
+                        I'm <span id="dynamic-text" concept-color="concept"></span>.
+                        <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur ab corrupti unde repellendus necessitatibus eligendi dolorem reprehenderit expedita. Exercitationem.
+                    </h1>
+                </div>
+                <!-- Concept Vert, hover: simple sreen, moving lines -->
+                <nav id="home-navigation">
+                    <ul class="home-contents">
+                        <li id="home-nav-about">ABOUT</li>
+                        <div class="dynamic-line"></div>
+                        <li class="home-content">Education</li>
+                        <div class="dynamic-line"></div>
+                        <li class="home-content">Experience</li>
+                        <div class="dynamic-line"></div>
+                        <li class="home-content">Contacts</li>
+                        <div class="dynamic-line"></div>
+                        <li class="home-content">Portfolios</li>
+                        <div class="dynamic-line"></div>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="home-right">
                 <div id="my-picture-accessory">
-                    <div class="nieun"> <!-- 니은 모양이라서 니은이라고 이름 지음 -->
-                        <div class="nieun-horz l0 t0" concept-background-color="concept"></div>
-                        <div class="nieun-vert l0 t0" concept-background-color="concept"></div>
-                    </div>
-                    <img id="myPicture" src="./myPicture.png">
+                    <!-- 니은 모양이라서 니은이라고 이름 지음 -->
                     <div class="nieun">
-                        <div class="nieun-horz r0 b0" concept-background-color="concept"></div>
-                        <div class="nieun-vert r0 b0" concept-background-color="concept"></div>
+                        <div class="nieun-h"></div>
+                        <div class="nieun-h r0 b0"></div>
+                        <div class="nieun-v"></div>
+                        <div class="nieun-v r0 b0"></div>
                     </div>
+                    <!-- <img id="myPicture" src="./myPicture.png"> -->
                 </div>
             </div>
-            <!-- Concept Vert, hover: simple sreen, moving lines -->
-            <nav id="home-navigation">
-                <ul class="home-contents">
-                    <li class="home-content">Education</li>
-                    <li class="home-content">Experience</li>
-                    <li class="home-content">Contacts</li>
-                    <li class="home-content">Portfolios</li>
-                </ul>
-            </nav>
         </div>
 
         <!-- home -->
-            <!-- My Photo -->
             <!-- introduction -->
+            <!-- My Photo -->
                 <!-- Design Concepts -->
                     <!-- Vertical -->
 
@@ -116,6 +126,7 @@
                 <!-- Concepts -->
                     <!-- Horizontal -->
 
+        <script src="main.js"></script>
     </body>
     <footer>
         <div id="code-right">
@@ -125,5 +136,4 @@
             </div>
         </div>
     </footer>
-    <script src="main.js"></script>
 </html>

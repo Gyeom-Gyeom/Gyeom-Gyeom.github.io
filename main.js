@@ -125,26 +125,29 @@ document.addEventListener("touchmove", (e)=>{
 });
 
 // Cursor Size
-document.querySelectorAll('.home-content').forEach(element => {
-    resizingCursorSize(element);
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.home-content').forEach(element => {
+        resizingCursorSize(element);
+    });
 });
 
 function resizingCursorSize(element) {
     element.addEventListener('mouseover', () => {
         cursor.style.setProperty('--size', '5rem');
+        console.log(true);
     });
     element.addEventListener('mouseout', () => {
         cursor.style.setProperty('--size', '1rem');
+        console.log(false);
     });
 }
 
-
 // Dynamic Text
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
+    const dynamicText = document.getElementById(`dynamic-text`);
     const phrases = ["Semiconductor Engineer", "Front-End Engineer", "Web Designer"];
     const phrases_num = phrases.length;
     let currentPhraseIndex = 0;
-    const textElement = document.getElementById("dynamic-text");
     let charIndex = 0;
     let isDeleting = false;
 
@@ -171,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        textElement.textContent = displayText;
+        dynamicText.textContent = displayText;
         setTimeout(type, isDeleting ? 100 : 150);
     }
 
