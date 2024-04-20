@@ -159,7 +159,7 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
 
 /* Body Setting */
 body{
-    cursor:     none;
+    cursor:  none;
     margin:  2rem;
     padding: 2rem;
 }
@@ -173,7 +173,10 @@ body{
     padding: 0;
 }
 
-.home-left { width: 60%; }
+.home-left {
+    position: relative;
+    width: 60%;
+}
 
 .home-right{
     margin:  2rem;
@@ -190,7 +193,7 @@ ul{ list-style: none; }
     font-style: normal;
     
     display: flex;
-    min-height: 100vh;
+    min-height: 85vh;
     min-width: 100vh;
 }
 
@@ -199,7 +202,9 @@ ul{ list-style: none; }
 #dynamic-text{ cursor: text; }
 
 #home-navigation{
-    bottom:0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 .home-contents{
