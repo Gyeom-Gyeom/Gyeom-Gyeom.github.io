@@ -11,13 +11,9 @@
 .b0{ bottom: 0; }
 
 /* Concept Color */
-[concept-color="concept"] {
-    color: var(--clr-concept);
-}
+[concept-color="concept"] { color: var(--clr-concept); }
 
-[concept-background-color="concept"] {
-    background-color: var(--clr-concept);
-}
+[concept-background-color="concept"] { background-color: var(--clr-concept); }
 
 body{
     cursor:     none;
@@ -25,17 +21,14 @@ body{
     padding:    2rem;
 }
 
-body[dark-mode="dark"]{
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
-}
-
-body[dark-mode="light"]{
-    background-color: var(--clr-light);
-    color: var(--clr-dark);
-}
 
 /* Dark Mode */
+[dark-mode="dark"]{ color: var(--clr-light); }
+[dark-mode="light"]{ color: var(--clr-dark); }
+
+body[dark-mode="dark"]{background-color: var(--clr-dark);}
+body[dark-mode="light"]{background-color: var(--clr-light);}
+
 #dark-mode-changer{
     position: absolute;
     top:    4rem;
@@ -53,31 +46,29 @@ body[dark-mode="light"]{
     mix-blend-mode: difference;
 }
 
-#dark-light{
-    justify-content: space-around;
-}
+#dark-light{ justify-content: space-around; }
 
 .fa-sun{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left:  1rem;
+    background: transparent;
 }
 
-.fa-sun[dark-mode="light"]{
-    display: none;
-}
+.fa-sun[dark-mode="light"]{ display: none; }
 
 .fa-moon{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 1rem;
+    background: transparent;
 }
 
-.fa-moon[dark-mode="dark"]{
-    display: none;
-}
+.fa-moon[dark-mode="dark"]{ display: none; }
+
+.fa-plane{ background: transparent; }
 
 .fa-plane[dark-mode="light"]{
     position: absolute;
@@ -117,9 +108,7 @@ body[dark-mode="light"]{
     mix-blend-mode: difference;
 }
 
-.fa-palette{
-    font-size: 1.5rem;
-}
+.fa-palette{ font-size: 1.5rem; }
 
 #clr-palette{
     --diameter: 30px;
@@ -157,27 +146,17 @@ body[dark-mode="light"]{
 
 
 
-ul{
-    list-style: none;
-}
+ul{ list-style: none; }
 
-/* #home{
-    color: #dfdfdf;
-} */
-
-#home-introduction{
+#home{
     font-family: "Arvo", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-#my-introduction{
-    width: 55rem;
-}
+#my-introduction{ width: 55rem; }
 
-#dynamic-text{
-    cursor: text;
-}
+#dynamic-text{ cursor: text; }
 
 .home-contents{
     margin:0;
@@ -280,9 +259,7 @@ footer{
     mix-blend-mode: difference;
 }
 
-#code-right:hover .fa-copyright{
-    animation: rotate2pi 1s linear infinite;
-}
+#code-right:hover .fa-copyright{ animation: rotate2pi 1s linear infinite; }
 
 @keyframes rotate2pi{
     from{ transform: rotate(0deg); }
@@ -290,8 +267,8 @@ footer{
 }
 
 /* Dynamic Div */
-.dynamic-div {
-    height: var(--height);
-    width: var(--width);
-    padding: var(--padding);
-}
+/* .dynamic-div { */
+    /* height: var(--height); */
+    /* width: var(--width); */
+    /* padding: var(--padding); */
+/* } */
