@@ -165,13 +165,14 @@ body{
 /* Home */
 
 .home-left, .home-right {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 .home-left { width: 60%; }
-.home-right{ width: 40%; }
+.home-right{
+    width: 40%;
+}
 
 ul{ list-style: none; }
 
@@ -180,13 +181,12 @@ ul{ list-style: none; }
     font-weight: 400;
     font-style: normal;
     
-    box-sizing: border-box;
     display: flex;
     min-height: 80vh;
     min-width: 100vh;
 }
 
-#my-introduction{ width: 55rem; }
+#my-introduction{ width: 100%; }
 
 #dynamic-text{ cursor: text; }
 
@@ -203,13 +203,13 @@ ul{ list-style: none; }
 }
 
 #home-nav-about{
-    width: 55rem;
+    width: 100%;
     font-size: 2rem;
     mix-blend-mode: difference;
 }
 
 .home-content{
-    width: 55rem;
+    width: 100%;
     font-size: 3rem;
     cursor: pointer;
     mix-blend-mode: difference;
@@ -222,13 +222,25 @@ ul{ list-style: none; }
 
 /* My Picture Accessory */
 #my-picture-accessory{
-    /* --height-picture: 20rem; */
+    position: relative;
     height: 70%;
-    width:  100%;
+    width:  80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* My Picture */
+#myPicture{
+    max-height: 70%;
+    max-width: 70%;
+    object-fit: contain;
 }
 
 .nieun{
-    position: relative;
+    margin: 2rem;
+    padding: 2rem;
     mix-blend-mode: difference;
     width:  100%;
     height: 100%;
@@ -252,14 +264,6 @@ ul{ list-style: none; }
     --width-nieun-h: var(--short-nieun);
     height: var(--height-nieun-h);
     width: var(--width-nieun-h);
-}
-
-/* My Picture */
-#myPicture{
-    top:  50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: var(--height-picture);
 }
 
 
