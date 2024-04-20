@@ -1,12 +1,26 @@
 // Dark Mode
 let modeState = "dark";
+checkDisplayOfSunMoon();
+
 document.getElementById("dark-mode-changer").addEventListener("click", function() {
     modeState = modeState==="dark"? "light": "dark";
     const darkModes = document.querySelectorAll("[dark-mode]");
     darkModes.forEach(mode => { mode.setAttribute("dark-mode", modeState); });
-    const colorDarkModes = document.querySelectorAll("[color-dark-mode]");
-    colorDarkModes.forEach(mode => { mode.setAttribute("color-dark-mode", modeState); });
+    checkDisplayOfSunMoon();
 });
+
+function checkDisplayOfSunMoon() {
+    const sun = document.querySelector(".fa-sun");
+    const moon = document.querySelector(".fa-moon");
+    if (modeState === "light"){
+        sun.style.display = "none";
+        moon.style.display = "inline-block";
+    }
+    else {
+        sun.style.display = "inline-block";
+        moon.style.display = "none";
+    }
+}
 
 
 // Color Palette

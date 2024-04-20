@@ -56,8 +56,6 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
     background: transparent;
 }
 
-.fa-sun[dark-mode="light"]{ display: none; }
-
 .fa-moon{
     position: absolute;
     top: 50%;
@@ -65,8 +63,6 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
     right: 1rem;
     background: transparent;
 }
-
-.fa-moon[dark-mode="dark"]{ display: none; }
 
 .fa-plane{ background: transparent; }
 
