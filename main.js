@@ -133,12 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function resizingCursorSize(element) {
     element.addEventListener('mouseover', () => {
-        cursor.style.setProperty('--size', '5rem');
-        console.log(true);
+        cursor.style.width = "5rem";
     });
     element.addEventListener('mouseout', () => {
-        cursor.style.setProperty('--size', '1rem');
-        console.log(false);
+        cursor.style.width = "1rem";
     });
 }
 

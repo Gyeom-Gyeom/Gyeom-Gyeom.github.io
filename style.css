@@ -82,12 +82,14 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
 }
 
 
+
+
 /* Mouse Cursor */
 #cursor{
     position: absolute;
     transform: translate(-50%, -50%);
     width:  var(--size, 1rem);
-    height: var(--size, 1rem);
+    aspect-ratio: 1;
     border-radius: 50%;
     mix-blend-mode: difference;
     background: var(--clr-concept);
@@ -248,6 +250,8 @@ ul{ list-style: none; }
     align-items: center;
 }
 
+
+
 /* My Picture */
 #myPicture{
     position: absolute;
@@ -296,6 +300,9 @@ footer{
     height: 10rem;
     /* background-color: red; */
 }
+
+
+/* Code / Copy Right */
 
 #code-right{
     --padding: 1rem;
