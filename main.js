@@ -124,6 +124,20 @@ document.addEventListener("touchmove", (e)=>{
     move(e);
 });
 
+// Cursor Size
+document.querySelectorAll('.home-content').forEach(element => {
+    resizingCursorSize(element);
+});
+
+function resizingCursorSize(element) {
+    element.addEventListener('mouseover', () => {
+        cursor.style.setProperty('--size', '5rem');
+    });
+    element.addEventListener('mouseout', () => {
+        cursor.style.setProperty('--size', '1rem');
+    });
+}
+
 
 // Dynamic Text
 document.addEventListener("DOMContentLoaded", function() {
@@ -163,3 +177,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setTimeout(type, 2000);
 });
+
+
+
+
