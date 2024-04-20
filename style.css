@@ -153,6 +153,10 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
 }
 
 
+
+
+
+
 /* Body Setting */
 body{
     cursor:     none;
@@ -271,6 +275,9 @@ ul{ list-style: none; }
 }
 
 
+
+
+
 /* Footer */
 footer{
     position: fixed;
@@ -301,6 +308,9 @@ footer{
 }
 
 #code-right:hover .fa-copyright{ animation: rotateP2pi 1s linear; }
+
+
+
 
 @keyframes rotateP2pi{
     from{ transform: rotate(0deg); }
