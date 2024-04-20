@@ -1,9 +1,9 @@
 // Dark Mode
+let modeState = "dark";
 document.getElementById("dark-mode-changer").addEventListener("click", function() {
-    const curMode = document.body.getAttribute("dark-mode");
-    const newMode = curMode==="dark"? "light": "dark";
+    modeState = modeState==="dark"? "light": "dark";
     const darkModes = document.querySelectorAll("[dark-mode]");
-    darkModes.forEach(mode => { mode.setAttribute("dark-mode", newMode); });
+    darkModes.forEach(mode => { mode.setAttribute("dark-mode", modeState); });
 });
 
 

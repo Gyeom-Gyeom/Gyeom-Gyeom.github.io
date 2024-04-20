@@ -191,70 +191,15 @@ ul{
     box-shadow: 0 0.5rem 1rem -0.25rem #000;
 }
 
-.scroller{
-    max-width: 600px;
-    /* overflow: hidden; */
-    /* outline: 3px solid lime; */
-}
-
-.scroller_inner{
-    padding-block: 1rem;
-    /* display: flex; */
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.scroller[data-animated="true"]{
-    overflow: hidden;
-    -webkit-mask: linear-gradient(
-        90deg, 
-        transparent, 
-        white 20%, 
-        white 80%, 
-        transparent
-    );
-    mask: linear-gradient(
-        90deg, 
-        transparent, 
-        white 20%, 
-        white 80%, 
-        transparent
-    );
-}
-
-.scroller[data-animated="true"] .scroller_inner{
-    width: max-content;
-    flex-wrap: nowrap;
-    animation:
-    scroll
-    var(--animation-duration, 10s)
-    var(--animation-direction, forwards)
-    linear
-    infinite;
-}
-
-.scroller[data-direction="right"]{
-    --animation-direction: reverse;
-}
-
-.scroller[data-direction="left"]{
-    --animation-direction: forwards;
-}
-
-@keyframes scroll{
-    to{
-        transform: translate(-100%);
-    }
-}
-
 .home-content{
     cursor: pointer;
     mix-blend-mode: difference;
 }
-        
-        
-        
-        
+
+
+
+
+
 /* Mouse Cursor */
 #cursor{
     position: absolute;
@@ -316,13 +261,23 @@ footer{
 }
 
 #code-right{
+    --padding: 1rem;
+
     overflow: hidden;
-    height: var(--height);
-    width: var(--width);
-    padding: var(--padding);
+    height: var(--height, 1rem);
+    width: var(--width, 11.5rem);
+    padding: var(--padding, 1rem);
     z-index: 2;
     border: 1px var(--clr-concept) solid;
     border-radius: 3rem;
+
+    align-content: center;
+    justify-content: center;
+}
+
+#code-right:hover{
+    background-color: var(--clr-concept);
+    mix-blend-mode: difference;
 }
 
 #code-right:hover .fa-copyright{
@@ -336,17 +291,7 @@ footer{
 
 /* Dynamic Div */
 .dynamic-div {
-    --width: 10rem;
-    --height: 1rem;
-    --padding: 1rem;
     height: var(--height);
     width: var(--width);
     padding: var(--padding);
-
-    cursor: pointer;
-}
-
-.dynamic-div:hover #code-right{
-    background-color: var(--clr-concept);
-    mix-blend-mode: difference;
 }
