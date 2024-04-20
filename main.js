@@ -126,19 +126,17 @@ document.addEventListener("touchmove", (e)=>{
 
 // Cursor Size
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.home-content').forEach(element => {
-        resizingCursorSize(element);
+    document.querySelectorAll(`[cursor-interact="true"]`).forEach(element => {
+        element.addEventListener('mouseover', () => {
+            cursor.style.width = "5rem";
+        });
+        element.addEventListener('mouseout', () => {
+            cursor.style.width = "1rem";
+        });
     });
 });
 
-function resizingCursorSize(element) {
-    element.addEventListener('mouseover', () => {
-        cursor.style.width = "5rem";
-    });
-    element.addEventListener('mouseout', () => {
-        cursor.style.width = "1rem";
-    });
-}
+
 
 // Dynamic Text
 document.addEventListener("DOMContentLoaded", () => {
