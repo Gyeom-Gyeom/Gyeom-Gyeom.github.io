@@ -156,7 +156,7 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
 /* Body Setting */
 body{
     cursor:     none;
-    margin: 2rem;
+    margin:  2rem;
     padding: 2rem;
 }
 
@@ -171,6 +171,9 @@ body{
 
 .home-left { width: 60%; }
 .home-right{
+    margin:  2rem;
+    padding: 2rem;
+    position: relative;
     width: 40%;
 }
 
@@ -224,7 +227,7 @@ ul{ list-style: none; }
 #my-picture-accessory{
     position: relative;
     height: 70%;
-    width:  80%;
+    width: 100%;
 
     display: flex;
     justify-content: center;
@@ -233,8 +236,9 @@ ul{ list-style: none; }
 
 /* My Picture */
 #myPicture{
-    max-height: 70%;
+    position: absolute;
     max-width: 70%;
+    max-height: 70%;
     object-fit: contain;
 }
 
