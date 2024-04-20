@@ -88,7 +88,7 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
 #cursor{
     position: absolute;
     transform: translate(-50%, -50%);
-    width:  var(--size, 1rem);
+    width:  1rem;
     aspect-ratio: 1;
     border-radius: 50%;
     mix-blend-mode: difference;
