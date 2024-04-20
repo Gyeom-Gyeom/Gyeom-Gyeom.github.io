@@ -50,36 +50,25 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
     border-radius: calc(var(--size) /2);
 
     cursor: pointer;
-
     text-align: center;
-
     mix-blend-mode: difference;
 }
 
 #dark-light{ justify-content: space-around; }
 
-.fa-sun{
+.fa-sun, .fa-moon, .fa-plane {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left:  1rem;
     background: transparent;
 }
 
-.fa-moon{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 1rem;
-    background: transparent;
-}
+.fa-sun, .fa-moon { transform: translateY(-50%); }
 
-.fa-plane{
-    position: absolute;
-    top: 50%;
-    background: transparent;
-    transition: 1s;
-}
+.fa-sun{ left:  1rem; }
+
+.fa-moon{ right: 1rem; }
+
+.fa-plane{ transition: 1s; }
 
 
 
