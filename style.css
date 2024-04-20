@@ -87,6 +87,16 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
 }
 
 
+/* Mouse Cursor */
+#cursor{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width:  var(--size, 1rem);
+    height: var(--size, 1rem);
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+
 
 /* Color Palette */
 #call-palette{
@@ -144,7 +154,7 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
 }
 
 
-
+/* Home */
 
 ul{ list-style: none; }
 
@@ -178,16 +188,6 @@ ul{ list-style: none; }
 
 
 
-
-/* Mouse Cursor */
-#cursor{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width:  var(--size, 1rem);
-    height: var(--size, 1rem);
-    border-radius: 50%;
-    mix-blend-mode: difference;
-}
 
 /* My Picture Accessory */
 #my-picture-accessory{
