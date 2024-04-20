@@ -1,12 +1,14 @@
 // Dark Mode
 let modeState = "dark";
 checkDisplayOfSunMoon();
+checkPositionOfPlane();
 
 document.getElementById("dark-mode-changer").addEventListener("click", function() {
     modeState = modeState==="dark"? "light": "dark";
     const darkModes = document.querySelectorAll("[dark-mode]");
     darkModes.forEach(mode => { mode.setAttribute("dark-mode", modeState); });
     checkDisplayOfSunMoon();
+    checkPositionOfPlane();
 });
 
 function checkDisplayOfSunMoon() {
@@ -19,6 +21,20 @@ function checkDisplayOfSunMoon() {
     else {
         sun.style.display = "inline-block";
         moon.style.display = "none";
+    }
+}
+
+function checkPositionOfPlane() {
+    const plane = document.querySelector(".fa-plane");
+    if (modeState === "light"){
+        plane.style.left = "1rem";
+        plane.style.right = "";
+        plane.style.transform = "translateY(-50%)";
+    }
+    else {
+        plane.style.left = "";
+        plane.style.right = "1rem";
+        plane.style.transform = "translateY(-50%) rotate(180deg)";
     }
 }
 

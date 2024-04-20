@@ -68,15 +68,7 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
     position: absolute;
     top: 50%;
     background: transparent;
-    transition: 0.5s;
-    transform: translateY(-50%);
-}
-
-.fa-plane[dark-mode="light"]{ left: 1rem; }
-
-.fa-plane[dark-mode="dark"]{
-    transform: translateY(-50%) rotate(180deg);
-    right: 1rem;
+    transition: 1s;
 }
 
 
