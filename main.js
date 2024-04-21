@@ -4,6 +4,7 @@ checkDisplayOfSunMoon();
 checkPositionOfPlane();
 
 document.getElementById("dark-mode-changer").addEventListener("click", function() {
+    console.log("dark");
     modeState = modeState==="dark"? "light": "dark";
     const darkModes = document.querySelectorAll("[dark-mode]");
     darkModes.forEach(mode => { mode.setAttribute("dark-mode", modeState); });
@@ -136,12 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// 커서 사이즈 안 커짐
+// 다크모드랑 팔레트 클릭이 안 됨
+
 
 
 // Dynamic Text
 document.addEventListener("DOMContentLoaded", () => {
     const dynamicText = document.getElementById(`dynamic-text`);
-    const phrases = ["Semiconductor Engineer", "Front-End Engineer", "Web Designer"];
+    const phrases = ["ASML TS Engineer", "Front-End Engineer", "Web Designer"];
     const phrases_num = phrases.length;
     let currentPhraseIndex = 0;
     let charIndex = 0;

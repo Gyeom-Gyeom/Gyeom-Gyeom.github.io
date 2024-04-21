@@ -20,8 +20,18 @@ html{ scroll-behavior: smooth; }
 .t0{ top: 0; }
 .b0{ bottom: 0; }
 
+/* TEST */
+.column{
+    display: flex;
+    flex-flow: column;
+    gap: 3rem;
+}
 
-
+.row{
+    display: flex;
+    flex-flow: row;
+    gap: 3rem;
+}
 
 /* Concept Color */
 [concept-color="concept"] { color: var(--clr-concept); }
