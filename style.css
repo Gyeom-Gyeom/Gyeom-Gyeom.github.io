@@ -1,3 +1,5 @@
+/* Basic Setting */
+
 *,
 *::before,
 *::after{
@@ -6,14 +8,20 @@
     box-sizing: border-box;
 }
 
+html, body{
+    height: 100%;
+    /* min-height: 100vh; */
+    background-color: skyblue;
+}
+
 html{
     scroll-behavior: smooth;
 }
 
-html, body {
-    width: 100%;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
+body{
+    cursor:  none;
+    flex:1;
+    background-color: lime;
 }
 
 :root{
@@ -22,23 +30,32 @@ html, body {
     --clr-concept:  orange;
 }
 
+
+
+
 /* Default Position */
 .l0{ left: 0; }
 .r0{ right: 0; }
 .t0{ top: 0; }
 .b0{ bottom: 0; }
 
+.wrap{
+    position: fixed;
+}
+
+.flex-wrap{
+    position: relative;
+}
+
 /* Column & Row */
 .column{
     display: flex;
     flex-flow: column;
-    /* gap: 3rem; */
 }
 
 .row{
     display: flex;
     flex-flow: row;
-    /* gap: 3rem; */
 }
 
 /* Concept Color */
@@ -54,8 +71,8 @@ html, body {
 [dark-mode="dark"]{ color: var(--clr-light); }
 [dark-mode="light"]{ color: var(--clr-dark); }
 
-body[dark-mode="dark"]{background-color: var(--clr-dark);}
-body[dark-mode="light"]{background-color: var(--clr-light);}
+/* body[dark-mode="dark"] { background-color: var(--clr-dark); }
+body[dark-mode="light"]{ background-color: var(--clr-light); } */
 
 #dark-mode-changer{
     position: absolute;
@@ -63,7 +80,7 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
     right:  4rem;
 
     --size: 40px;
-    width: calc(var(--size) *2);
+    width:  calc(var(--size) *2);
     height: var(--size);
     border-radius: calc(var(--size) /2);
 
@@ -168,14 +185,6 @@ body[dark-mode="light"]{background-color: var(--clr-light);}
 
 
 
-
-
-/* Body Setting */
-body{
-    width:  100vw;
-    height: 100vh;
-    cursor:  none;
-}
 
 
 
