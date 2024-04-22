@@ -126,16 +126,16 @@ document.addEventListener("touchmove", (e)=>{
 });
 
 // Cursor Size
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll(`[cursor-interact="true"]`).forEach(element => {
-        element.addEventListener('mouseover', () => {
-            cursor.style.width = "5rem";
-        });
-        element.addEventListener('mouseout', () => {
-            cursor.style.width = "1rem";
-        });
-    });
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     document.querySelectorAll(`[cursor-interact="true"]`).forEach(element => {
+//         element.addEventListener('mouseover', () => {
+//             cursor.style.width = "5rem";
+//         });
+//         element.addEventListener('mouseout', () => {
+//             cursor.style.width = "1rem";
+//         });
+//     });
+// });
 
 // 커서 사이즈 안 커짐
 // 다크모드랑 팔레트 클릭이 안 됨
@@ -143,43 +143,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Dynamic Text
-document.addEventListener("DOMContentLoaded", () => {
-    const dynamicText = document.getElementById(`dynamic-text`);
-    const phrases = ["ASML TS Engineer", "Front-End Engineer", "Web Designer"];
-    const phrases_num = phrases.length;
-    let currentPhraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+// document.addEventListener("DOMContentLoaded", () => {
+//     const dynamicText = document.getElementById(`dynamic-text`);
+//     const phrases = ["ASML TS Engineer", "Front-End Engineer", "Web Designer"];
+//     const phrases_num = phrases.length;
+//     let currentPhraseIndex = 0;
+//     let charIndex = 0;
+//     let isDeleting = false;
 
-    function type() {
-        let currentPhrase = phrases[currentPhraseIndex];
-        let displayText = currentPhrase.substring(0, charIndex);
+//     function type() {
+//         let currentPhrase = phrases[currentPhraseIndex];
+//         let displayText = currentPhrase.substring(0, charIndex);
 
-        if (isDeleting) {
-            if (charIndex > 0) {
-                charIndex--;
-                displayText = currentPhrase.substring(0, charIndex);
-            } else {
-                isDeleting = false;
-                currentPhraseIndex = (currentPhraseIndex + 1) % phrases_num;
-            }
-        } else {
-            if (charIndex <= currentPhrase.length) {
-                charIndex++;
-                displayText = currentPhrase.substring(0, charIndex);
-            } else {
-                setTimeout(() => {
-                    isDeleting = true;
-                }, 1000);
-            }
-        }
+//         if (isDeleting) {
+//             if (charIndex > 0) {
+//                 charIndex--;
+//                 displayText = currentPhrase.substring(0, charIndex);
+//             } else {
+//                 isDeleting = false;
+//                 currentPhraseIndex = (currentPhraseIndex + 1) % phrases_num;
+//             }
+//         } else {
+//             if (charIndex <= currentPhrase.length) {
+//                 charIndex++;
+//                 displayText = currentPhrase.substring(0, charIndex);
+//             } else {
+//                 setTimeout(() => {
+//                     isDeleting = true;
+//                 }, 1000);
+//             }
+//         }
 
-        dynamicText.textContent = displayText;
-        setTimeout(type, isDeleting ? 100 : 150);
-    }
+//         dynamicText.textContent = displayText;
+//         setTimeout(type, isDeleting ? 100 : 150);
+//     }
 
-    setTimeout(type, 2000);
-});
+//     setTimeout(type, 2000);
+// });
 
 
 
