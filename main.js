@@ -137,10 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// 커서 사이즈 안 커짐
-// 다크모드랑 팔레트 클릭이 안 됨
-
-
 
 // Dynamic Text
 document.addEventListener("DOMContentLoaded", () => {

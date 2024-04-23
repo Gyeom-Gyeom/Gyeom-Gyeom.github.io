@@ -3,9 +3,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale= 1, maximum-scale= 1">
         <title>Gyeom</title>
-        <link rel="stylesheet" href="./style.css">
+        <!-- <link rel="stylesheet" href="./style.css"> -->
 
         <!-- FontAwesome Icons CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -18,169 +18,265 @@
         <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         
 
+        <style>
+            *{ margin:0; padding:0; box-sizing: border-box; }
+            html, body{ width: 100%; position: relative; }
+            .column{ display: flex; flex-direction: column; gap:3rem; overflow:hidden; }
+            .row{ display: flex; flex-direction: row; gap:3rem; overflow:hidden; }
+
+            .top{
+                display: grid;
+                background-color: gray;
+                position: relative;
+                height: 100%;
+                width:  100%;
+                min-height: 100vh;
+                min-width:  100vw;
+            }
+            #me{
+                justify-self: center;
+                position: absolute;
+                height: 100vh;
+
+                object-fit: contain;
+            }
+            .top-name{
+                overflow: hidden;
+                color: white;
+                font-size: 1000%;
+                text-wrap: nowrap;
+                position: absolute;
+                bottom: 0;
+            }
+            .row-nav{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                z-index: 1;
+            }
+            .copyright{
+                border-radius: 5rem;
+                padding: 1rem;
+                margin:  2rem;
+                border: 1px solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                height: 3rem;
+            }
+            .copyright:hover .fa-copyright{ animation: 1s rotation linear infinite; }
+            @keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+            a{ text-decoration: none; color: white; }
+            .top-nav{
+                display: flex;
+                flex-direction: row;
+                padding: 1rem;
+                margin:  2rem;
+                font-size: 2rem;
+            }
+            .top-nav a:not(:last-child) { margin-right: 2rem; }
+        </style>
     </head>
 
-    <body dark-mode="dark">
-
+    <body>
         <div class="column">
-            <div class="first-screen">
-                <!-- <img id="myPicture2-bg" src="./assets/myPicture2.jpg" alt="myPicture"> -->
-                <img id="myPicture2-no-bg" src="./assets/myPicture2-removebg.png" alt="myPicture">
-                <div class="picture-effect">
-                    <p class="name-picture-effect">KIM&nbsp;JUN&nbsp;GYEOM&nbsp;—&nbsp;</p>
-                </div>
-            </div>
-            <!-- <div class="mid">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, nemo.
-            </div>
-            <div class="bottom">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi adipisci laudantium necessitatibus. Maxime possimus dicta aliquam. Totam nulla deserunt repellat eaque officiis sunt assumenda hic nobis, atque tenetur quam rerum eius error voluptas ducimus cumque ratione repellendus, quos necessitatibus animi architecto repudiandae ipsam! Libero iusto minus sequi rem similique temporibus.
-            </div>
-            <div class="row">
-                <div class="left">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, facilis? Unde tenetur, laudantium exercitationem eligendi iste fuga rerum. Ab, quas?
-                </div>
-                <div class="cen">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, facilis? Unde tenetur, laudantium exercitationem eligendi iste fuga rerum. Ab, quas?
-                </div>
-                <div class="right">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, facilis? Unde tenetur, laudantium exercitationem eligendi iste fuga rerum. Ab, quas?
-                </div>
-            </div> -->
-        </div>
-
-
-
-
-
-        <!-- Mouse Cursor -->
-        <div id="cursor"></div>
-
-        <!-- Home -->
-        <div id="home">
-
-            <!-- Home Left Part -->
-            <div class="home-left">
-                <div id="home-introduction">
-                    <h1 id="my-introduction">
-                        Hello, My name is <span concept-color="concept">Jun Gyeom</span>.
-                        <br>
-                        I'm <span id="dynamic-text" concept-color="concept"></span>.
-                        <br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur ab corrupti unde repellendus necessitatibus eligendi dolorem reprehenderit expedita. Exercitationem.
-                    </h1>
-                </div>
-
-                <!-- Concept Vert, hover: simple sreen, moving lines -->
-                <nav id="home-navigation">
-
-                    <div id="home-nav-about">ABOUT</div>
-                    <div class="dynamic-line"></div>
-
-                    <ul class="home-contents">
-                        <li class="home-content" cursor-interact="true">Education</li>
-                        <div class="dynamic-line"></div>
-
-                        <li class="home-content" cursor-interact="true">Experience</li>
-                        <div class="dynamic-line"></div>
-
-                        <li class="home-content" cursor-interact="true">Awards</li>
-                        <div class="dynamic-line"></div>
-
-                        <li class="home-content" cursor-interact="true">Portfolios</li>
-                        <div class="dynamic-line"></div>
-
-                        <li class="home-content" cursor-interact="true">Contacts</li>
-                        <div class="dynamic-line"></div>
-                    </ul>
-                </nav>
-
-            </div>
-
-            <!-- Home Right Part -->
-            <div class="home-right">
-                <div id="my-picture-accessory">
-                    <!-- 니은 모양이라서 니은이라고 이름 지음 -->
-                    <div class="nieun">
-                        <div class="nieun-h l0 t0"></div>
-                        <div class="nieun-h r0 b0"></div>
-                        <div class="nieun-v l0 t0"></div>
-                        <div class="nieun-v r0 b0"></div>
-                    </div>
-                    <img id="myPicture" src="./assets/myPicture1.png">
-                </div>
-                <!-- <div id="code-right">
-                    <div class="dynamic-div">
+            <div class="top">
+                <div class="row-nav">
+                    <div class="copyright">
                         <i class="fa-regular fa-copyright"></i>
-                        <span>Code by Jun Gyeom</span>
+                        &nbsp;&nbsp;
+                        <a href="./index.html" class="copyright-name">
+                            Code&nbsp;by&nbsp;Gyeom</a>
                     </div>
-                </div> -->
+
+                    <div class="top-nav">
+                        <a href="#">Archieve</a>
+                        <a href="#">Education</a>
+                        <a href="#">Experience</a>
+                        <a href="#">Contacts</a>
+                    </div>
+                </div>
+                <img id="me" src="./assets/myPicture2-removebg.png" alt="">
+                <p class="top-name">JUN&nbsp;GYEOM&nbsp;KIM&nbsp;—&nbsp;</p>
             </div>
-        </div>
-
-        <!-- Dark Mode -->
-        <div id="dark-mode-changer" concept-background-color="concept">
-            <div id="dark-light">
-                <i class="fa-solid fa-sun"></i>
-                <i class="fa-solid fa-moon"></i>
+            <div class="mid">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae possimus incidunt, ea repellendus minima eaque!
             </div>
-            <i class="fa-solid fa-plane"></i>
+            <div class="bot">
+                <div class="row">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </div>
+            </div>
+            <footer></footer>
         </div>
-
-        <!-- Color Palette -->
-        <button id="call-palette" is-appear="false" concept-background-color="concept">
-            <i class="fa-solid fa-palette"></i>
-        </button>
-
-        <div id="clr-palette">
-            <div class="clr-circle" style="background-color: red;"></div>
-            <div class="clr-circle" style="background-color: blue;"></div>
-            <div class="clr-circle" style="background-color: green;"></div>
-            <div class="clr-circle" style="background-color: orange;"></div>
-            <div class="clr-circle" style="background-color: pink;"></div>
-            <div class="clr-circle" style="background-color: transparent;"></div>
-        </div>
-
-        <!-- home -->
-            <!-- introduction -->
-            <!-- My Photo -->
-                <!-- Design Concepts -->
-                    <!-- Vertical -->
-
-        <!-- education -->
-            <!-- '15.03 - '21.02 KyungHee Univ. bachelor Physics -->
-            <!-- '21.03 - '23.02 KyungHee Univ. Master Physics - High Energy Particle Physics -->
-                <!-- Design Concepts -->
-                    <!-- Photo of Univ. -->
-                <!-- Contents -->
-                    <!-- PDF of my paper -->
-
-        <!-- experience -->
-            <!-- '23.05 - '24.01 pre start up package from south korea -->
-            <!-- '24.05 - pre start up package from south korea -->
-            <!-- '23.03 - 42Seoul -->
-                <!-- Design Concepts -->
-                    <!-- hover > mini screen -->
-                <!-- Contents -->
-                    <!-- Photos, Videos, PDFs of them -->
-
-        <!-- contact -->
-            <!-- number -->
-            <!-- email -->
-            <!-- instagram -->
-            <!-- github -->
-            <!-- cssbattle -->
-                <!-- Contents -->   
-                    <!-- Send email to me: name number email what u want to tell -->
-
-        <!-- portfolio -->
-            <!-- frame work of my portfolio -->
-            <!-- design work of my portfolio -->
-            <!-- other portfolios -->
-                <!-- Concepts -->
-                    <!-- Horizontal -->
-
-        <footer></footer>
-        <script src="main.js"></script>
     </body>
 </html>
+
+    <!-- <body dark-mode="dark">
+
+        <div id="cursor"></div>
+
+        <div class="wrap">
+            <div class = "flex-wrap">
+                <div class="column">
+
+                    <div class="first-screen">
+                        <img id="myPicture2-no-bg" src="./assets/myPicture2-removebg.png" alt="myPicture">
+                        <div class="picture-effect">
+                            <p class="name-picture-effect">KIM&nbsp;JUN&nbsp;GYEOM&nbsp;—&nbsp;</p>
+                        </div>
+                        <div class="picture-effect">
+                            <p class="name-picture-effect">KIM&nbsp;JUN&nbsp;GYEOM&nbsp;—&nbsp;</p>
+                        </div>
+                        <div class="picture-effect">
+                            <p class="name-picture-effect">KIM&nbsp;JUN&nbsp;GYEOM&nbsp;—&nbsp;</p>
+                        </div>
+                    </div>
+
+
+                    <div id="home">
+
+                        <div class="home-left">
+                            <div id="home-introduction">
+                                <h1 id="my-introduction">
+                                    Hello, My name is <span concept-color="concept">Jun Gyeom</span>.
+                                    <br>
+                                    I'm <span id="dynamic-text" concept-color="concept"></span>.
+                                    <br>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur ab corrupti unde repellendus necessitatibus eligendi dolorem reprehenderit expedita. Exercitationem.
+                                </h1>
+                            </div>
+
+                            <nav id="home-navigation">
+
+                                <div id="home-nav-about">ABOUT</div>
+                                <div class="dynamic-line"></div>
+
+                                <ul class="home-contents">
+                                    <li class="home-content" cursor-interact="true">Education</li>
+                                    <div class="dynamic-line"></div>
+
+                                    <li class="home-content" cursor-interact="true">Experience</li>
+                                    <div class="dynamic-line"></div>
+
+                                    <li class="home-content" cursor-interact="true">Awards</li>
+                                    <div class="dynamic-line"></div>
+
+                                    <li class="home-content" cursor-interact="true">Portfolios</li>
+                                    <div class="dynamic-line"></div>
+
+                                    <li class="home-content" cursor-interact="true">Contacts</li>
+                                    <div class="dynamic-line"></div>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="home-right">
+                            <div id="my-picture-accessory">
+                                <div class="nieun">
+                                    <div class="nieun-h l0 t0"></div>
+                                    <div class="nieun-h r0 b0"></div>
+                                    <div class="nieun-v l0 t0"></div>
+                                    <div class="nieun-v r0 b0"></div>
+                                </div>
+                                <img id="myPicture" src="./assets/myPicture1.png">
+                            </div>
+                            <div id="code-right">
+                                <div class="dynamic-div">
+                                    <i class="fa-regular fa-copyright"></i>
+                                    <span>Code by Jun Gyeom</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="bottom">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi adipisci laudantium necessitatibus. Maxime possimus dicta aliquam. Totam nulla deserunt repellat eaque officiis sunt assumenda hic nobis, atque tenetur quam rerum eius error voluptas ducimus cumque ratione repellendus, quos necessitatibus animi architecto repudiandae ipsam! Libero iusto minus sequi rem similique temporibus.
+                    </div>
+                    <div class="row">
+                        <div class="left">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, facilis? Unde tenetur, laudantium exercitationem eligendi iste fuga rerum. Ab, quas?
+                        </div>
+                        <div class="cen">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, facilis? Unde tenetur, laudantium exercitationem eligendi iste fuga rerum. Ab, quas?
+                        </div>
+                        <div class="right">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, facilis? Unde tenetur, laudantium exercitationem eligendi iste fuga rerum. Ab, quas?
+                        </div>
+                    </div>
+
+                
+
+                <div id="dark-mode-changer" concept-background-color="concept">
+                    <div id="dark-light">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                    <i class="fa-solid fa-plane"></i>
+                </div>
+
+                <button id="call-palette" is-appear="false" concept-background-color="concept">
+                    <i class="fa-solid fa-palette"></i>
+                </button>
+
+                <div id="clr-palette">
+                    <div class="clr-circle" style="background-color: red;"></div>
+                    <div class="clr-circle" style="background-color: blue;"></div>
+                    <div class="clr-circle" style="background-color: green;"></div>
+                    <div class="clr-circle" style="background-color: orange;"></div>
+                    <div class="clr-circle" style="background-color: pink;"></div>
+                    <div class="clr-circle" style="background-color: transparent;"></div>
+                </div>
+
+                <footer></footer>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html> -->
+
+
+
+<!-- home -->
+    <!-- introduction -->
+    <!-- My Photo -->
+        <!-- Design Concepts -->
+            <!-- Vertical -->
+
+<!-- education -->
+    <!-- '15.03 - '21.02 KyungHee Univ. bachelor Physics -->
+    <!-- '21.03 - '23.02 KyungHee Univ. Master Physics - High Energy Particle Physics -->
+        <!-- Design Concepts -->
+            <!-- Photo of Univ. -->
+        <!-- Contents -->
+            <!-- PDF of my paper -->
+
+<!-- experience -->
+    <!-- '23.05 - '24.01 pre start up package from south korea -->
+    <!-- '24.05 - pre start up package from south korea -->
+    <!-- '23.03 - 42Seoul -->
+        <!-- Design Concepts -->
+            <!-- hover > mini screen -->
+        <!-- Contents -->
+            <!-- Photos, Videos, PDFs of them -->
+
+<!-- contact -->
+    <!-- number -->
+    <!-- email -->
+    <!-- instagram -->
+    <!-- github -->
+    <!-- cssbattle -->
+        <!-- Contents -->   
+            <!-- Send email to me: name number email what u want to tell -->
+
+<!-- portfolio -->
+    <!-- frame work of my portfolio -->
+    <!-- design work of my portfolio -->
+    <!-- other portfolios -->
+        <!-- Concepts -->
+            <!-- Horizontal -->
