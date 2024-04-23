@@ -67,7 +67,6 @@
             }
             .copyright:hover .fa-copyright{ animation: 1s rotation linear infinite; }
             @keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-            a{ text-decoration: none; color: white; }
             .top-nav{
                 display: flex;
                 flex-direction: row;
@@ -75,7 +74,14 @@
                 margin:  2rem;
                 font-size: 2rem;
             }
+            a{ text-decoration: none; }
+            .top a{ color: white; }
             .top-nav a:not(:last-child) { margin-right: 2rem; }
+            
+            .mid{ color: black; width: 100%; }
+            .mid p{ font-size: 5rem; text-align: center; margin-bottom: 2rem; }
+            .mid a{ color: black; margin: auto; font-size: 7rem; }
+            .string{ border-top: 1px solid black; width: 100%; }
         </style>
     </head>
 
@@ -100,14 +106,27 @@
                 <img id="me" src="./assets/myPicture2-removebg.png" alt="">
                 <p class="top-name">JUN&nbsp;GYEOM&nbsp;KIM&nbsp;—&nbsp;</p>
             </div>
+
             <div class="mid">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae possimus incidunt, ea repellendus minima eaque!
+                <p>Make Your Service More Prettier</p>
+                <div class="column">
+                    <div class="string"></div>
+                    <a href="#">Archieve</a>
+                    <div class="string"></div>
+                    <a href="#">Education</a>
+                    <div class="string"></div>
+                    <a href="#">Experience</a>
+                    <div class="string"></div>
+                    <a href="#">Contacts</a>
+                    <div class="string"></div>
+                </div>
             </div>
+
             <div class="bot">
-                <div class="row">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <div class="row" style="justify-content: space-evenly;">
+                    <p>location</p>
+                    <p>timezone</p>
+                    <p>sns</p>
                 </div>
             </div>
             <footer></footer>
