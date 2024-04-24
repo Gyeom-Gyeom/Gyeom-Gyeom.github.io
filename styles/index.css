@@ -50,10 +50,12 @@
 }
 
 .copyright:hover .fa-copyright{ animation: 1s rotation linear infinite; }
+.bot>.row>.column:hover .fa-earth-asia{ animation: 1s rotation linear infinite; }
 
-.fa-earth-asia:hover{ animation: 1s rotation linear infinite; }
-
-@keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 
 .top-nav{
     display: flex;
@@ -69,10 +71,27 @@ a{ text-decoration: none; }
 
 .top-nav a:not(:last-child) { margin-right: 2rem; }
 
-.mid{ color: black; width: 100%; }
+.mid{
+    color: black;
+    width: 100%;
+}
 
-.mid p{ font-size: 5rem; text-align: center; margin-bottom: 2rem; }
+.mid p{
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
-.mid a{ color: black; margin: auto; font-size: 7rem; }
+.mid a{
+    color: black;
+    margin: auto;
+    font-size: 7rem;
+}
 
-.string{ border-top: 2px solid rgba(128, 128, 128, 0.5); width: 80%; align-self: center; }
+.string{
+    height: 2px;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: 80%;
+    align-self: center;
+}
+

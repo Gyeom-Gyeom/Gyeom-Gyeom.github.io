@@ -5,6 +5,8 @@
 }
 
 html, body{
+    scroll-behavior: smooth;
+    overscroll-behavior-y: none;
     width: 100%;
     position: relative;
 }
@@ -20,4 +22,18 @@ html, body{
     flex-direction: row;
     gap: 3rem;
     overflow: hidden;
+}
+
+#cursor{
+    position: absolute;
+    width: 1rem;
+    aspect-ratio: 1;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(130, 55, 130);
+    /* 빛 번짐 효과 */
+    /* background-color: white;
+    opacity: 0.8;
+    box-shadow: 0 0 6rem 2rem white; */
 }
