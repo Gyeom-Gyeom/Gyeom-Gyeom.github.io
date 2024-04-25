@@ -1,0 +1,44 @@
+:root{
+    --clr1: #141414;
+    /* var(--clr1); */
+    --clr2: beige;
+    /* var(--clr2); */
+}
+
+body{ background-color: var(--clr2); }
+
+.column{
+    height: 100vh;
+    text-align: center;
+    gap: 2rem;
+}
+
+.copyright{
+    color: var(--clr1);
+    border: 1px solid var(--clr1);
+}
+
+a { color: var(--clr1); }
+
+#download-thesis{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    background-color: rgb(204, 204, 0);
+    align-self: center;
+    text-align: center;
+    width: 17rem;
+    cursor: pointer;
+}
+
+p{ font-size: 2rem; }
+
+.tablet{
+    margin: 2rem 5rem;
+    display: grid;
+    font-size: 2rem;
+}
+
+.tablet-exp{ grid-template-columns: repeat(3, 1fr); }
+
+.tablet-edu{ grid-template-columns: 1fr 2fr; }

@@ -1,6 +1,5 @@
 .top{
     display: grid;
-    background-color: gray;
     background-color: rgb(222, 220, 209);
     position: relative;
     height: 100%;
@@ -29,47 +28,9 @@
     bottom: 0;
 }
 
-.row-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 8rem;
-    z-index: 1;
-}
-
-.copyright{
-    border-radius: 5rem;
-    padding: 1rem;
-    margin:  2.5rem;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 3rem;
-}
-
-.copyright:hover .fa-copyright{ animation: 1s rotation linear infinite; }
 .bot>.row>.column:hover .fa-earth-asia{ animation: 1s rotation linear infinite; }
 
-@keyframes rotation {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.top-nav{
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-    margin:  2rem;
-    font-size: 2rem;
-}
-
-a{ text-decoration: none; }
-
 .top a{ color: white; }
-
-.top-nav a:not(:last-child) { margin-right: 2rem; }
 
 .mid{
     color: black;
@@ -95,3 +56,7 @@ a{ text-decoration: none; }
     align-self: center;
 }
 
+.copyright{
+    color: white;
+    border: 1px solid white;
+}

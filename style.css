@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    /* cursor: none; */
 }
 
 html, body{
@@ -26,14 +27,53 @@ html, body{
 
 #cursor{
     position: absolute;
-    width: 1rem;
+    /* width: 1rem; */
+    height: 1rem;
     aspect-ratio: 1;
     z-index: -1;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(130, 55, 130);
+    transition: height 0.5s;
     /* 빛 번짐 효과 */
     /* background-color: white;
     opacity: 0.8;
     box-shadow: 0 0 6rem 2rem white; */
 }
+
+.row-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 8rem;
+    z-index: 1;
+}
+
+.copyright{
+    border-radius: 5rem;
+    padding: 1rem;
+    margin:  2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+
+.copyright:hover .fa-copyright{ animation: 1s rotation linear infinite; }
+
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.top-nav{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin:  2rem;
+    font-size: 2rem;
+}
+
+a{ text-decoration: none; }
+
+.top-nav a:not(:last-child) { margin-right: 2rem; }
