@@ -1,14 +1,22 @@
 // Screen Effects
-const hoverKyunghee = document.querySelectorAll('.hover-kyunghee');
+document.querySelectorAll('p').forEach(p => {
+    p.addEventListener('mouseover', function() {
+        if (this.getAttribute('hover')) {
+            let name = this.getAttribute('hover');
+            showScreen(name);
+        }
+    });
+    p.addEventListener('mouseleave', hideScreen);
+});
 
-function showScreen() {
+function showScreen(name) {
     cursor.style.zIndex = '1';
     cursor.style.opacity = '0.6';
     cursor.style.borderRadius = '0';
     cursor.style.height = '800px';
     cursor.style.aspectRatio = '';
     cursor.style.backgroundColor = 'transparent';
-    cursor.style.backgroundImage = `url(./../assets/KyungHeeUniv.jpeg)`;
+    cursor.style.backgroundImage = `url(./../assets/${name}.jpeg)`;
     cursor.style.backgroundSize = 'contain';
     cursor.style.backgroundRepeat = 'no-repeat';
     cursor.style.pointerEvents = 'none';
@@ -25,9 +33,6 @@ function hideScreen() {
     cursor.style.backgroundSize = '';
     cursor.style.backgroundRepeat = '';
 }
-
-hoverKyunghee.forEach(e => { e.addEventListener('mouseenter', showScreen); });
-hoverKyunghee.forEach(e => { e.addEventListener('mouseleave', hideScreen); });
 
 
 

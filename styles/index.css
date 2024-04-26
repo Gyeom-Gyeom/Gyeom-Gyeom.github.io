@@ -1,3 +1,5 @@
+.column{ font-family: arvo, sans-serif; }
+
 .top{
     display: grid;
     background-color: rgb(222, 220, 209);
