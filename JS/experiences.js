@@ -33,5 +33,49 @@ hoverKyunghee.forEach(e => {
     e.addEventListener('mouseleave', hideScreen);
 });
 
+
+
+
 // Dark Mode
-let mode = `bright`;
+const darkModeButton = document.getElementById('darkmode');
+const darkModeScreen = document.getElementById('darkmode-screen');
+let isDragging = false;
+let startY;
+
+function dragStart(e) {
+    isDragging = true;
+    startY = e.clientY;
+    const computedStyle = window.getComputedStyle(darkModeScreen);
+    darkModeScreen.initialTop = parseInt(computedStyle.top, 10) || 0;
+    
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+const darkModeButtonHeight = 16; // 1rem experiences.css
+
+function dragging(e) {
+    if (isDragging) {
+        let viewportHeight = window.innerHeight;
+        let newTop = darkModeScreen.initialTop + e.clientY - startY;
+        // const currentY = e.clientY;
+        // const diffY = currentY - startY;
+        if (newTop < darkModeButtonHeight) {
+            newTop = darkModeButtonHeight;
+        } else if (newTop > viewportHeight) {
+            newTop = viewportHeight;
+        };
+        darkModeScreen.style.top = `${newTop}px`;
+
+        e.preventDefault();
+        e.stopPropagation();
+    }
+}
+
+function dragEnd() { isDragging = false; }
+
+darkModeButton.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragging);
+document.addEventListener('mouseup', dragEnd);
+
+darkModeButton.addEventListener('dragstart', (e) => { e.preventDefault(); });

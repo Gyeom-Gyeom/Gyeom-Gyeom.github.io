@@ -5,7 +5,10 @@
     /* var(--clr2); */
 }
 
-body{ background-color: var(--clr2); }
+body{
+    background-color: var(--clr2);
+    overflow: hidden;
+}
 
 .column{
     height: 100vh;
@@ -39,6 +42,54 @@ p{ font-size: 2rem; }
     font-size: 2rem;
 }
 
+.tablet > div, .tablet > p { margin-bottom: 1rem; }
+
+.tablet > div > p{ display: inline-block; }
+
 .tablet-exp{ grid-template-columns: repeat(3, 1fr); }
 
 .tablet-edu{ grid-template-columns: 1fr 2fr; }
+
+#darkmode-screen{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 100vh;
+    background: rgba(14, 14, 14, 0.8);
+}
+
+#darkmode{
+    width: 100%;
+    height: 1rem;
+    top: -1rem;
+    background-color: var(--clr1);
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.bars{
+    position: relative;
+    width: 5rem;
+    height: 100%;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bar-top, .bar-mid, .bar-bot {
+    background-color: var(--clr2);
+    position: absolute;
+    height: 10%;
+    border-radius: 50px;
+    width: 80%;
+    
+    left: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.bar-top{ top: calc(50% - 20%); }
+.bar-mid{ top: 50%; }
+.bar-bot{ top: calc(50% + 20%); }

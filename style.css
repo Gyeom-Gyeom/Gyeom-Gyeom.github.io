@@ -17,12 +17,14 @@ html, body{
     flex-direction: column;
     gap: 3rem;
     overflow: hidden;
+    width: 100%;
 }
 
 .row{ display: flex;
     flex-direction: row;
     gap: 3rem;
     overflow: hidden;
+    height: 100%;
 }
 
 #cursor{
