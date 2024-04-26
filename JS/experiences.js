@@ -26,19 +26,16 @@ function hideScreen() {
     cursor.style.backgroundRepeat = '';
 }
 
-hoverKyunghee.forEach(e => {
-    e.addEventListener('mouseenter', showScreen);
-});
-hoverKyunghee.forEach(e => {
-    e.addEventListener('mouseleave', hideScreen);
-});
+hoverKyunghee.forEach(e => { e.addEventListener('mouseenter', showScreen); });
+hoverKyunghee.forEach(e => { e.addEventListener('mouseleave', hideScreen); });
 
 
 
 
 // Dark Mode
-const darkModeButton = document.getElementById('darkmode');
-const darkModeScreen = document.getElementById('darkmode-screen');
+const darkModeButton = document.getElementById(`darkmode`);
+const darkModeScreen = document.getElementById(`darkmode-screen`);
+const innerPage = document.getElementById(`inner-page`);
 let isDragging = false;
 let startY;
 
@@ -60,12 +57,13 @@ function dragging(e) {
         let newTop = darkModeScreen.initialTop + e.clientY - startY;
         // const currentY = e.clientY;
         // const diffY = currentY - startY;
-        if (newTop < darkModeButtonHeight) {
-            newTop = darkModeButtonHeight;
-        } else if (newTop > viewportHeight) {
-            newTop = viewportHeight;
+        if (newTop < 0) {
+            newTop = 0;
+        } else if (newTop > viewportHeight - darkModeButtonHeight) {
+            newTop = viewportHeight - darkModeButtonHeight;
         };
         darkModeScreen.style.top = `${newTop}px`;
+        innerPage.style.bottom = `${newTop}px`;
 
         e.preventDefault();
         e.stopPropagation();
