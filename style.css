@@ -17,12 +17,14 @@ html, body{
     flex-direction: column;
     gap: 3rem;
     overflow: hidden;
+    width: 100%;
 }
 
 .row{ display: flex;
     flex-direction: row;
     gap: 3rem;
     overflow: hidden;
+    height: 100%;
 }
 
 #cursor{
@@ -50,6 +52,7 @@ html, body{
 }
 
 .copyright{
+    font-size: 1rem;
     border-radius: 5rem;
     padding: 1rem;
     margin:  2.5rem;
