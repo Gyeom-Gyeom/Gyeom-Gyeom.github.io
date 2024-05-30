@@ -1,6 +1,9 @@
-html{
+html, body{
     width: 100%;
+    overflow: hidden;
 }
+
+
 
 :root{
     --clr1: #141414;
@@ -133,4 +136,13 @@ p{ font-size: 2rem; }
 
 .r90{
     transform: rotate(90deg);
+}
+
+.arrow-darkmode{
+    position: absolute;
+    width:  10rem;
+    height: 1rem;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-36%);
 }

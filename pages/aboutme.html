@@ -20,7 +20,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div id="cursor"></div>
+
+    <div class="row-grid">
+        <div class="column">
+            <div class="row top">
+                <div class="copyright">
+                    <i class="fa-regular fa-copyright"></i>
+                    &nbsp;&nbsp;
+                    <a href="./../index.html" class="copyright-name">
+                        Code&nbsp;by&nbsp;Gyeom</a>
+                </div>
+            </div>
+        </div>
+        <!-- 이거 전체를 통째로 90도 돌려보는거 좋을듯 << 혜주님 조언 -->
+        <!-- '모달'이라는 것을 만들어보자. 이건 항상 바뀌고, 항상 제일 위에 있음. -->
+        <!-- stopPropagation()에 대해서 공부해야함 -->
+        <div class="neu-in">
+            <div class="flex-r90 column">
+                <a href="./projects.html">Projects</a>
+                <a href="./experiences.html">Experience</a>
+                <a href="./contacts.html">Contacts</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./../main.js"></script>
+    <script src="./../JS/aboutme.js"></script>
 </body>
 </html>
 
