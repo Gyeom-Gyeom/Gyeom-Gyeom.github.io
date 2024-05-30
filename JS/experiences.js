@@ -13,7 +13,7 @@ function showScreen(name) {
     cursor.style.zIndex = '1';
     cursor.style.opacity = '0.6';
     cursor.style.borderRadius = '0';
-    cursor.style.height = '800px';
+    cursor.style.height = '600px';
     cursor.style.aspectRatio = '';
     cursor.style.backgroundColor = 'transparent';
     cursor.style.backgroundImage = `url(./../assets/${name}.jpeg)`;

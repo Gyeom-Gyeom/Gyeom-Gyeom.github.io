@@ -1,0 +1,76 @@
+html, body{
+    width: 100%;
+    background: #96d35f;
+    background: linear-gradient(
+        90deg,
+        #cbe9af 30%,
+        /* #cbe9af = (white + #96d35f) /2 */
+        #96d35f 80%
+    );
+    color: white;
+    cursor: none;
+}
+
+a{color: white; padding: 1rem;}
+
+/* Cursor */
+#cursor{
+    position: absolute;
+    background-color: #79c734;
+    box-shadow: 0 0 2rem 2rem #79c734;
+    z-index: 1;
+    transition: box-shadow 0.5s, background-color 0.5s;
+}
+
+/* Neumorphism */
+.neu-out{
+    box-shadow:
+        20px 20px 71px #3c5426,
+        -20px -20px 71px #f0ff98;
+}
+
+.neu-in{
+    box-shadow:
+        inset 20px 20px 71px #3c5426,
+        inset -20px -20px 71px #f0ff98;
+}
+
+.row-grid{
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 10rem;
+    min-height: 100vh;
+}
+
+.row-grid > .neu-in{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 3rem;
+}
+
+.top{
+    justify-content: space-between; 
+}
+
+.copyright, .copyright a{color: #667558;}
+/* #667558 = (black + #cbe9af) /2 */
+
+
+.neu-in > .column{
+    border-radius: 3rem;
+    height: 100%;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.flex-r90{
+    border-radius: 2rem;
+    display: flex;
+}
+
+.flex-r90 > a{
+    transform: rotate(90deg);
+    font-size: 3rem;
+    width: 100%;
+}
