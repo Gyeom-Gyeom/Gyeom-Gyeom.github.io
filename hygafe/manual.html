@@ -80,18 +80,23 @@
             box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
         }
         #container{
-            border: 1px solid red;
-            padding: 0 2rem;
+            /* border: 1px solid red; */
+            padding: 2rem;
             position: absolute;
-            top: 50%;
-            transform: translateY(-45%);
-            height: calc(100% - 2 * var(--height-nav));
+            top: var(--height-nav);
             width: 100%;
 
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(auto-fill, minmax(5rem, auto));
+            /* grid-template-rows: repeat(auto-fit, 5rem); */
             gap: 2rem;
+        }
+        #container>button{
+            height: 5rem;
+            font-size: 1.5rem;
+            border-radius: 2.5rem;
+            background-color: gray;
+            color: white;
         }
 
         .color-red{color: red;}
@@ -106,14 +111,30 @@
             <button id="go-to-first">처음으로 돌아가기</button>
         </nav>
         <div id="container" class="show">
-            <button class="cold" style="font-size: 2rem;">아메리카노</button>
-            <button class="cold" style="font-size: 2rem;">아메리카노</button>
-            <button class="cold" style="font-size: 2rem;">아메리카노</button>
-            <button class="cold" style="font-size: 2rem;">아메리카노</button>
-            <button class="cold" style="font-size: 2rem;">아메리카노</button>
-            <button class="cold" style="font-size: 2rem;">아메리카노</button>
-            <button class="cold" style="font-size: 2rem;">아메리카노</button>
-            <button class="cold" style="font-size: 2rem;">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
+            <button class="cold">아메리카노</button>
         </div>
     </div>
 </body>
