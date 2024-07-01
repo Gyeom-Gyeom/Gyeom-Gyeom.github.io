@@ -173,5 +173,23 @@
             <button class="beverage ice">식혜</button>
         </div>
     </div>
+    <script>
+        const beverages = document.querySelectorAll(`.beverage`);
+        beverages.forEach(beverage => {
+            beverage.addEventListener('click', async function() {
+                    let text = beverage.textContent;
+                    let type = beverage.classList.contains('ice') ? 'ice' : 'hot';
+                    try {
+                        if (text == ""){
+                            await console.log(`empty text`); }
+                        else {
+                            await console.log(`${type} ${text}`);
+                        }
+                    } catch (err) {
+                        alert(`정보를 받아오던 중 오류가 있었습니다`);
+                    }
+                });
+            });
+    </script>
 </body>
 </html>
