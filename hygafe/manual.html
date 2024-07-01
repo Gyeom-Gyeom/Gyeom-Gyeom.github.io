@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Code by Gyeom -->
+<!-- Hygafe X Gyeom -->
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -54,6 +56,9 @@
             width: 100%;
             height: 100vh;
             background-color: #0009;
+        }
+        #background.darken::after {
+            background-color: #000d;
         }
         #app{
             padding: 0;
@@ -193,6 +198,7 @@
         const manual = document.getElementById('manual');
         const container = document.getElementById('container');
         const beverages = document.querySelectorAll(`.beverage`);
+        const background = document.getElementById('background');
 
         manual.addEventListener('click', async function() {
             await console.log(`매뉴얼 클릭`);
@@ -200,6 +206,7 @@
             manual.style.zIndex = "-10";
             manual.innerText = "";
             container.style.zIndex = "10";
+            background.classList.toggle('darken');
         });
 
         function scrollToTop() {
@@ -221,6 +228,7 @@
                         await console.log(`${type} ${text}: 이게 텍스트임`);
                         manual.style.zIndex = "10";
                         container.style.zIndex = "-10";
+                        background.classList.toggle('darken');
                         scrollToTop();
 
                         // 커피류
