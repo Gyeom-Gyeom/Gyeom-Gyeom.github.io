@@ -24,6 +24,11 @@
         body{
             line-height: 1.6;
         }
+        button{
+            cursor: pointer;
+            border: none;
+        }
+
         #background{
             background-attachment: scroll;
             background-clip: border-box;
@@ -65,13 +70,11 @@
         }
         #go-to-first{
             border-radius: 20px;
-            border: none;
             height: 80%;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
             position: absolute;
-            cursor: pointer;
             color: white;
             background-color: rgba(255, 235, 205, 0.4);
             box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
@@ -82,33 +85,11 @@
             transform: translateY(-45%);
             height: calc(100% - 2 * var(--height-nav));
             width: 100%;
-        }
-        #buffer, #coffee, #non-coffee{
-            left: 50%;
-            transform: translateX(-50%);
-            width:80%;
-        }
-        #buffer{
-            height: 10%;
-        }
-        #coffee, #non-coffee{
-            height: 45%;
-            border-radius: 40px;
-            font-size: 2rem;
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        #coffee{
-            background-color: brown;
-            background-color: rgba(165, 42, 42, 0.5);
-        }
-        #non-coffee{
-            background-color: yellowgreen;
-            background-color: rgba(154, 205, 50, 0.5);
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(auto-fill, minmax(5rem, auto));
+            gap: 2rem;
         }
 
         .color-red{color: red;}
@@ -123,13 +104,14 @@
             <button id="go-to-first">처음으로 돌아가기</button>
         </nav>
         <div id="container" class="show">
-            <div id="coffee">
-                커피류
-            </div>
-            <div id="buffer"></div>
-            <div id="non-coffee">
-                논커피류
-            </div>
+            <button class="cold" style="font-size: 2rem;">아메리카노</button>
+            <button class="cold" style="font-size: 2rem;">아메리카노</button>
+            <button class="cold" style="font-size: 2rem;">아메리카노</button>
+            <button class="cold" style="font-size: 2rem;">아메리카노</button>
+            <button class="cold" style="font-size: 2rem;">아메리카노</button>
+            <button class="cold" style="font-size: 2rem;">아메리카노</button>
+            <button class="cold" style="font-size: 2rem;">아메리카노</button>
+            <button class="cold" style="font-size: 2rem;">아메리카노</button>
         </div>
     </div>
 </body>
