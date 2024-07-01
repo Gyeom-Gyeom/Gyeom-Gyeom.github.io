@@ -80,7 +80,6 @@
             position: absolute;
             top: 50%;
             transform: translateY(-45%);
-            /* border: 1px solid red; */
             height: calc(100% - 2 * var(--height-nav));
             width: 100%;
         }
@@ -95,6 +94,13 @@
         #coffee, #non-coffee{
             height: 45%;
             border-radius: 40px;
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         #coffee{
             background-color: brown;
@@ -104,6 +110,10 @@
             background-color: yellowgreen;
             background-color: rgba(154, 205, 50, 0.5);
         }
+
+        .color-red{color: red;}
+        .font-weight-600{font-weight: 600;}
+        .font-size-2rem{font-size: 2rem;}
     </style>
 </head>
 <body>
@@ -113,9 +123,13 @@
             <button id="go-to-first">처음으로 돌아가기</button>
         </nav>
         <div id="container" class="show">
-            <div id="coffee"></div>
+            <div id="coffee">
+                커피류
+            </div>
             <div id="buffer"></div>
-            <div id="non-coffee"></div>
+            <div id="non-coffee">
+                논커피류
+            </div>
         </div>
     </div>
 </body>
