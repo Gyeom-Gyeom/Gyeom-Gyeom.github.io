@@ -56,23 +56,47 @@
             height: 100%;
             margin: 0 auto;
             max-width: 425px;
+            
+            --height-nav: 100px;
         }
         nav{
-            /* border: 1px solid red; */
-            height: 100px;
+            height: var(--height-nav);
             width: 100%;
         }
         #go-to-first{
-            border-radius: 50%;
+            border-radius: 20px;
             border: none;
             height: 80%;
             left: 50%;
             top: 50%;
-            position: absolute;
             transform: translate(-50%, -50%);
+            position: absolute;
             cursor: pointer;
             color: white;
             background-color: rgba(255, 235, 205, 0.4);
+            box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+        }
+        #container{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            /* border: 1px solid red; */
+            height: calc(100% - 3 * var(--height-nav));
+            width: 100%;
+        }
+        #buffer, #coffee, #non-coffee{width:100%;}
+        #buffer{height: 10%;}
+        #coffee, #non-coffee{
+            height: 45%;
+            border-radius: 40px;
+        }
+        #coffee{
+            background-color: brown;
+            background-color: rgba(165, 42, 42, 0.5);
+        }
+        #non-coffee{
+            background-color: yellowgreen;
+            background-color: rgba(154, 205, 50, 0.5);
         }
     </style>
 </head>
@@ -80,11 +104,11 @@
     <div id="app">
         <div id="background"></div>
         <nav>
-            <!-- 처음으로 돌아가기 -->
             <button id="go-to-first">처음으로 돌아가기</button>
         </nav>
         <div id="container" class="show">
             <div id="coffee"></div>
+            <div id="buffer"></div>
             <div id="non-coffee"></div>
         </div>
     </div>
