@@ -88,7 +88,7 @@
             width: 100%;
             position: absolute;
             color: white;
-            text-align: left;
+            text-align: center;
             cursor: pointer;
             z-index: -10;
             font-size: 2rem;
@@ -96,6 +96,7 @@
             padding-top: 4rem;
         }
         #manual > p{
+            text-align: left;
             padding: 2rem 1rem;
             font-size: 1.2rem;
             font-weight: 400;
@@ -217,7 +218,7 @@
                         await console.log(`empty text`);
                     }
                     else {
-                        await console.log(`${type} ${text}: 이게 텍스트임`);
+                        await console.log(`${type} ${text}`);
                         manual.style.zIndex = "10";
                         container.style.zIndex = "-10";
                         background.classList.toggle('darken');
@@ -239,9 +240,9 @@
                                 <br>
                                 5. 에스프레소 머신 "두 잔 버튼"을 눌러 샷 추출하기
                                 <br>
-                                ※ 연하게 : 더블샷 추출 후 1/2 양만 사용
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 연하게 : 더블샷 추출 후 1/2 양만 사용</span>
                                 <br>
-                                ※ 진하게 : 더블샷 추가 수량만큼 추가 사용
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 진하게 : 더블샷 추가 수량만큼 추가 사용</span>
                             </p>
                             `;
                         }
@@ -295,9 +296,9 @@
                                 <br>
                                 4. 우유 200 ml 스티밍
                                 <br>
-                                ※ 우유는 스팀피쳐의 코 밑까지 담고 스티밍
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 우유는 스팀피쳐의 코 밑까지 담고 스티밍</span>
                                 <br>
-                                ※ 스팀밀크 4/5, 폼밀크 1/5 수준
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 스팀밀크 4/5, 폼밀크 1/5 수준</span>
                                 <br>
                                 5. 컵에 추출한 에스프레소 담고 스티밍 우유 푸어링
                                 <br>
@@ -338,9 +339,9 @@
                                 <br>
                                 4. 우유 200 ml 스티밍
                                 <br>
-                                ※ 우유는 스팀피쳐의 코 밑까지 담고 스티밍
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 우유는 스팀피쳐의 코 밑까지 담고 스티밍</span>
                                 <br>
-                                ※ 스팀밀크 1/2, 폼밀크 1/2 수준
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 스팀밀크 1/2, 폼밀크 1/2 수준</span>
                                 <br>
                                 5. 컵에 추출한 에스프레소 담고 스티밍 우유 푸어링
                                 <br>
@@ -364,9 +365,9 @@
                                 <br>
                                 5. 200ml 우유 스티밍
                                 <br>
-                                ※ 우유는 스팀피쳐의 코 밑까지 담고 스티밍
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 우유는 스팀피쳐의 코 밑까지 담고 스티밍</span>
                                 <br>
-                                ※ 스팀밀크 4/5, 폼밀크 1/5 수준
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 스팀밀크 4/5, 폼밀크 1/5 수준</span>
                                 <br>
                                 6. 컵에 바닐라시럽, 파우더 섞은 에스프레소 넣기
                                 <br>
@@ -412,9 +413,9 @@
                                 <br>
                                 5. 우유 200ml 스티밍
                                 <br>
-                                ※ 우유는 스팀피쳐의 코 밑까지 담고 스티밍합니다.
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 우유는 스팀피쳐의 코 밑까지 담고 스티밍</span>
                                 <br>
-                                ※ 스팀밀크 4/5, 폼밀크 1/5 수준
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 스팀밀크 4/5, 폼밀크 1/5 수준</span>
                                 <br>
                                 6. 컵에 초콜릿소스 섞은 에스프레소 넣기
                                 <br>
@@ -503,8 +504,6 @@
                             `;
                         }
                         // 논커피류
-                        // ※ 빈 잔에 용액 및 파우더를 넣을 때, 전자저울 0점을 맞춰야 합니다.
-                        // ※ 얼음, 물, 우유 넣을 때는 0점 맞추지 않아도 됩니다.
                         else if (type == "따뜻한" && text == "녹차라떼") {
                             manual.innerHTML = `
                             ${type} ${text} 만들기
@@ -609,7 +608,7 @@
                                 <br>
                                 6. 얼음잔에 정수물 가득 넣고 바스푼으로 가볍게 젓기
                                 <br>
-                                ※ 레몬/복숭아 아이스티 헷갈리지 않도록 유의하기
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 레몬/복숭아 아이스티 헷갈리지 않도록 유의하기</span>
                             </p>
                             `;
                         }
@@ -651,7 +650,7 @@
                                 <br>
                                 6. 컵 가득 차도록 얼음 추가
                                 <br>
-                                ※ 청을 붓기 전에 에이드 병을 위아래로 흔들어주기
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 청을 붓기 전에 에이드 병을 위아래로 흔들어주기</span>
                             </p>
                             `;
                         }
@@ -667,7 +666,7 @@
                                 <br>
                                 3. 티백 1분간 우리기
                                 <br>
-                                ※ 머그잔 이용 시 손잡이에 티백을 묶어주기
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 머그잔 이용 시 손잡이에 티백을 묶어주기</span>
                             </p>
                             `;
                         }
@@ -701,7 +700,7 @@
                                 <br>
                                 3. 뜨거운 물을 가득 채우고 1분간 우리기
                                 <br>
-                                ※ 머그잔 이용 시 손잡이에 티백을 묶어줍니다.
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 머그잔 이용 시 손잡이에 티백을 묶어주기</span>
                             </p>
                             `;
                         }
@@ -753,7 +752,7 @@
                                 <br>
                                 3. 컵에 식혜 가득 채우기
                                 <br>
-                                ※ 식혜 용액을 붓기 전에 병을 아래위로 흔들어주세요.
+                                <span style="font-size:1rem;">&nbsp;&nbsp;&nbsp;&nbsp;※ 식혜 용액을 붓기 전에 병을 아래위로 흔들어주기</span>
                             </p>
                             `;
                         }
