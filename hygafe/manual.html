@@ -62,9 +62,9 @@
             margin: 0 auto;
             max-width: 425px;
             
-            --height-nav: 100px;
+            /* --height-nav: 100px; */
         }
-        nav{
+        /* nav{
             height: var(--height-nav);
             width: 100%;
         }
@@ -78,18 +78,18 @@
             color: white;
             background-color: rgba(255, 235, 205, 0.4);
             box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
-        }
+        } */
         #container{
-            /* border: 1px solid red; */
             padding: 2rem;
             position: absolute;
-            top: var(--height-nav);
+            /* top: var(--height-nav); */
             width: 100%;
 
             display: grid;
             grid-template-columns: 1fr 1fr;
-            /* grid-template-rows: repeat(auto-fit, 5rem); */
             gap: 2rem;
+
+            z-index: 10;
         }
         #container>button{
             height: 5rem;
@@ -97,31 +97,44 @@
             border-radius: 2.5rem;
             color: white;
         }
+        #manual{
+            width: 100%;
+            position: absolute;
+            color: white;
+            /* pointer-events: none; */
+            text-align: center;
+
+            z-index: -10;
+        }
 
         .color-red{color: red;}
         .font-weight-600{font-weight: 600;}
         .font-size-2rem{font-size: 2rem;}
         .beverage.ice{
-            background-color: blue;
+            /* background-color: blue; */
             background-color: rgba(0, 0, 255, 0.7);
         }
         .beverage.hot{
-            background-color: red;
+            /* background-color: red; */
             background-color: rgba(255, 0, 0, 0.7);
         }
         .beverage.transparent{
             background-color: transparent;
             cursor: default;
         }
+        .disappear{
+            opacity: 0;
+            height: 0;
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <div id="background"></div>
-        <nav>
+        <!-- <nav>
             <button id="go-to-first">처음으로 돌아가기</button>
-        </nav>
-        <div id="container" class="show">
+        </nav> -->
+        <div id="container" class="">
             <!-- 커피류 -->
             <button class="beverage hot">에스프레소</button>
             <button class="beverage transparent"></button>
@@ -172,24 +185,49 @@
             <button class="beverage transparent"></button>
             <button class="beverage ice">식혜</button>
         </div>
+
+        <div id="manual" class=""></div>
     </div>
     <script>
+        const manual = document.getElementById('manual');
+        const container = document.getElementById('container');
         const beverages = document.querySelectorAll(`.beverage`);
+        manual.addEventListener('click', async function() {
+            await console.log(`매뉴얼 클릭`);
+
+            manual.style.zIndex = "-10";
+            container.style.zIndex = "10";
+        });
         beverages.forEach(beverage => {
             beverage.addEventListener('click', async function() {
-                    let text = beverage.textContent;
-                    let type = beverage.classList.contains('ice') ? 'ice' : 'hot';
-                    try {
-                        if (text == ""){
-                            await console.log(`empty text`); }
-                        else {
-                            await console.log(`${type} ${text}`);
-                        }
-                    } catch (err) {
-                        alert(`정보를 받아오던 중 오류가 있었습니다`);
+                let text = beverage.textContent;
+                let type = beverage.classList.contains('ice') ? '아이스' : '따뜻한';
+                try {
+                    if (text == ""){
+                        await console.log(`empty text`);
                     }
-                });
+                    else if (text == "에스프레소") {
+                        await console.log(`${text}`);
+                        manual.style.zIndex = "10";
+                        container.style.zIndex = "-10";
+
+                        manual.innerText = `
+                        에스프레소 만들기\n
+                        1. 12oz 컵 준비\n
+                        2. 18.1-18.5g 분쇄원두 양은 적정무게로 맞추기\n
+                        3. 계량이 적으면 가운데 포터필터 모양 누르기\n
+                        4. “ 에스프레소 머신 두 잔 버튼 을” 눌러 샷 추출하기\n
+                        `;
+                    }
+                    else {
+                        await console.log(`${type} ${text} 만들기`);
+                    }
+                }
+                catch (err) {
+                    alert(`정보를 받아오던 중 오류가 있었습니다`);
+                }
             });
+        });
     </script>
 </body>
 </html>
