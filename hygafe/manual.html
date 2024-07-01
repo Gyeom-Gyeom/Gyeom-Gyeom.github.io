@@ -193,6 +193,7 @@
         const manual = document.getElementById('manual');
         const container = document.getElementById('container');
         const beverages = document.querySelectorAll(`.beverage`);
+
         manual.addEventListener('click', async function() {
             await console.log(`매뉴얼 클릭`);
 
@@ -200,6 +201,14 @@
             manual.innerText = "";
             container.style.zIndex = "10";
         });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
         beverages.forEach(beverage => {
             beverage.addEventListener('click', async function() {
                 let text = beverage.textContent;
@@ -212,6 +221,7 @@
                         await console.log(`${type} ${text}: 이게 텍스트임`);
                         manual.style.zIndex = "10";
                         container.style.zIndex = "-10";
+                        scrollToTop();
 
                         // 커피류
                         // ※ 샷 추출하기 전, 빈 포터필터를 전자저울에 올려놓고 0점을 맞춘다.
