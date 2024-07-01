@@ -233,8 +233,9 @@
 
                         // 커피류
                         // ※ 샷 추출하기 전, 빈 포터필터를 전자저울에 올려놓고 0점을 맞춘다.
+                        manual.innerText = `${type} ${text} 만들기`;
                         if (text == "에스프레소") {
-                            manual.innerText = `
+                            manual.innerText += `
                             에스프레소 만들기
                             1. 12oz 컵 준비
                             2. 18.1-18.5g 분쇄원두 양은 적정무게로 맞추기
@@ -245,7 +246,7 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "아메리카노") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [뜨거운 물 + 에스프레소]
                             1. 12oz 컵 준비
                             2. 에스프레소 추출
@@ -254,7 +255,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "아메리카노") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 80% + 물 + 에스프레소]
                             1. 16oz 컵 준비
                             2. 에스프레소 추출
@@ -263,7 +264,7 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "카페라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [스티밍한 우유 200ml + 에스프레소 + 라떼아트]
                             1. 12oz 컵 준비
                             2. 에스프레소 추출
@@ -274,7 +275,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "카페라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 80% + 우유 200ml + 에스프레소]
                             1. 16oz 컵 준비
                             2. 에스프레소 추출
@@ -284,7 +285,7 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "카푸치노") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [스티밍한 우유 200ml + 에스프레소 + 시나몬 파우더]
                             1. 12oz 컵 준비
                             2. 에스프레소 추출
@@ -296,7 +297,7 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "바닐라라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [바닐라시럽 한 펌프 + 바닐라파우더 20g + 에스프레소 + 스티밍한 우유 200ml]
                             1. 12oz 컵 준비
                             2. 샷잔에 바닐라시럽 한 펌프 + 20g 바닐라파우더 넣기
@@ -309,7 +310,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "바닐라라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 80% + 우유 + 바닐라시럽 한 펌프 + 바닐라파우더 20g  + 에스프레소]
                             1. 16oz 컵 준비
                             2. 샷잔에 바닐라시럽 한 펌프 + 바닐라파우더 20g 넣기
@@ -320,7 +321,7 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "카페모카") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [스티밍우유 200ml + 초콜릿소스 38g + 에스프레소 + 초코토핑]
                             1. 12oz 컵 준비
                             2. 샷잔에 초콜릿소스 38g 넣기
@@ -333,7 +334,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "카페모카") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 80% + 우유 + 초콜릿소스 38g + 에스프레소 + 초코토핑]
                             1. 16oz 컵 준비
                             2. 샷잔에 초콜릿소스 38g 넣기
@@ -344,7 +345,7 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "카라멜 마끼아또") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [스티밍우유 200ml + 바닐라시럽 한 펌프 + 카라멜소스 38g + 에스프레소]
                             1. 12oz 컵 준비
                             2. 샷잔에 바닐라시럽 한 펌프 + 카라멜소스 38g 넣기
@@ -359,7 +360,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "카라멜 마끼아또") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [우유 200ml + 바닐라시럽 한 펌프 + 카라멜소스 38g + 에스프레소]
                             1. 16oz 컵 준비
                             2. 샷잔에 바닐라시럽 한 펌프 + 카라멜소스 38g 넣기
@@ -376,7 +377,7 @@
                         // ※ 빈 잔에 용액 및 파우더를 넣을 때, 전자저울 0점을 맞춰야 합니다.
                         // ※ 얼음, 물, 우유 넣을 때는 0점 맞추지 않아도 됩니다.
                         else if (type == "따뜻한" && text == "녹차라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [녹차파우더 28g + 스티밍한 우유 200ml]
                             1. 12oz 컵 준비
                             2. 스팀피처 코선까지 우유 담고 녹차파우더 28g 넣기
@@ -386,7 +387,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "녹차라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 60% + 녹차파우더 30g + 우유 200ml]
                             1. 16oz 컵 준비
                             2. 스팀피처에 녹차파우더 30g 넣기
@@ -397,7 +398,7 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "초코라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [더블핫초콜렛파우더 28g + 모닌초코소스 28g + 우유 200ml + 스티밍 + 초코토핑]
                             1. 12oz 컵 준비
                             2. 스팀피처에 모닌초코소스 28g + 더블핫초콜릿파우더 28g 넣기
@@ -408,7 +409,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "초코라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 60% + 모닌초코소스 28g + 더블핫초콜릿파우더 28g + 우유 200ml + 스티밍 + 초코토핑]
                             1. 16oz 컵 준비
                             2. 스팀피처에 모닌초코소스 28g + 더블핫초콜릿파우더 28g 넣기
@@ -420,7 +421,8 @@
                             `;
                         }
                         else if (type == "아이스" && text == "복숭아 / 레몬아이스티") {
-                            manual.innerText = `
+                            manual.innerText = `${type} 복숭아 / 레몬 아이스티 만들기`;
+                            manual.innerText += `
                             [얼음 80% + 아이스티 분말 55g + 뜨거운물 조금]
                             1. 16oz 컵 준비
                             2. 바쉐이커에 뜨거운물 조금(1-2cm) 담기
@@ -431,7 +433,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "레몬에이드") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 50% + 에이드청 80g + 사이다 1캔]
                             1. 16oz 컵 준비
                             2. 빈 컵에 에이드청 80g 넣기
@@ -442,7 +444,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "패션후르츠에이드") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 50% + 에이드청 80g + 탄산수 1캔]
                             1. 16oz 컵 준비
                             2. 빈 컵에 에이드청 80g 넣기
@@ -454,7 +456,8 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "캐모마일 / 페퍼민트/ 얼그레이 허브티") {
-                            manual.innerText = `
+                            manual.innerText = `${type} 캐모마일 / 페퍼민트 / 얼그레이 허브티 만들기`;
+                            manual.innerText += `
                             [뜨거운 물 + 티백 1개]
                             1. 12oz 컵 준비
                             2. 머그잔에 티백 1개 넣고 뜨거운물 가득 채우기
@@ -463,7 +466,8 @@
                             `;
                         }
                         else if (type == "아이스" && text == "캐모마일 / 페퍼민트/ 얼그레이 허브티") {
-                            manual.innerText = `
+                            manual.innerText = `${type} 캐모마일 / 페퍼민트 / 얼그레이 허브티 만들기`;
+                            manual.innerText += `
                             [얼음 80% + 물 + 티백 2개]
                             1. 16oz 컵 준비
                             2. 소형포터필터에 티백 2개를 넣고 2분간 우리기
@@ -473,7 +477,7 @@
                             `;
                         }
                         else if (type == "따뜻한" && text == "유자캐모마일허브티") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [유자청 40g + 티백 1개]
                             1. 12oz 컵 준비
                             2. 머그잔에 유자청 45g + 티백 1개 넣기
@@ -482,7 +486,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "유자캐모마일허브티") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 80% + 유자청 50g + 티백 2개]
                             1. 16oz 컵 준비
                             2. 소형포터필터에 티백 2개를 넣고 2분간 우리기
@@ -493,7 +497,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "오곡소이라떼") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 80% + 미숫가루 30g(2스푼) + 슈가시럽 한 펌프 + 두유]
                             1. 16oz 컵 준비
                             2. 빈 컵에 미숫가루 30g + 슈가시럽 한 펌프 넣기
@@ -502,7 +506,7 @@
                             `;
                         }
                         else if (type == "아이스" && text == "식혜") {
-                            manual.innerText = `
+                            manual.innerText += `
                             [얼음 80% + 식혜]
                             1. 16oz 컵 준비
                             2. 빈 컵에 얼음 80% 넣기
