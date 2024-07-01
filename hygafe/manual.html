@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>휘카페 매뉴얼</title>
+
+    <style>
+        *, *::before, *::after{
+            margin:0;
+            box-sizing: border-box;
+            position: relative;
+            font-weight: 400;
+        }
+        html{
+            height:100%;
+            user-select: none;
+            -webkit-user-select: none;
+            overscroll-behavior-y: none;
+            scroll-behavior: smooth;
+        }
+        #background{
+            background-attachment: scroll;
+            background-clip: border-box;
+            background-color: rgba(0,0,0,0);
+            background-image: url(https://modo-phinf.pstatic.net/20240131_51/1706687185628L2WsC_JPEG/mosakPZjFG.jpeg);
+            background-origin: padding-box;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100vh;
+        }
+        #background::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #0009;
+        }
+    </style>
 </head>
 <body>
-    asdf
+    <div id="background"></div>
 </body>
 </html>
