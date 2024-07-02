@@ -150,10 +150,11 @@
             else if (event.target.id === 'start-game' || event.target.id === 'next-problem') {
                 if (currentGameNumber < numberOfSelectedQuestion){
                     currentGameNumber = currentGameNumber + 1;
-                    renderQuestion('에스프레소', currentGameNumber);
+                    renderQuestion(randomMenuNum(currentGameNumber), currentGameNumber);
                 }
                 else {
                     let correctRate = numberOfCorrectedQuestion / numberOfSelectedQuestion * 100;
+                    currentGameNumber = 0;
                     renderResultPage(correctRate);
                 }
             }
@@ -162,15 +163,32 @@
             }
         });
 
-        function renderQuestion(menu, currentGameNumber) {
+        function renderQuestion(menuNum, currentGameNumber) {
             show.innerHTML = `
-            <div id="game-page">
-                <div class="current-number">${currentGameNumber} / ${numberOfSelectedQuestion}</div>
-                ${menu}<br>
-                <button id="next-problem">다음 문제</button>
-            </div>
+                <div id="game-page">
+                    <div class="current-number">${currentGameNumber} / ${numberOfSelectedQuestion}</div>
+                    ${menuNum}<br>
+                </div>
             `;
+
+            const gamePage = document.getElementById('game-page');
+            if (currentGameNumber < numberOfSelectedQuestion){ gamePage.innerHTML += `<button id="next-problem">다음 문제</button>`; }
+            else { gamePage.innerHTML += `<button id="next-problem">결과 보가</button>`; }
         };
+
+        function randomMenuNum(currentGameNumber){
+            if (currentGameNumber == 1){
+                arr = [];
+                for (let i=1; i<=numberOfSelectedQuestion; i++){
+                    arr.push(i);
+                }
+            }
+            let index = Math.floor(Math.random() * arr.length);
+            let ret = arr[index];
+            arr.splice(index, 1);
+            console.log(`ret is ${ret}`)
+            return ret;
+        }
 
         function renderFristPage(){
             show.innerHTML = `
