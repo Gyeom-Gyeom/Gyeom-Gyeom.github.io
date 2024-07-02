@@ -140,6 +140,11 @@
 
         let numberOfSelectedQuestion = 5;
         let numberOfCorrectedQuestion = 0;
+        let currentGameNumber = 0;
+
+        function question(menu) {
+            show.innerHTML = `${menu}`;
+        };
 
         document.addEventListener('click', function(event) {
             if (event.target.classList.contains('number-question')) {
@@ -153,7 +158,7 @@
                 `;
             }
             else if (event.target.id === 'start-game') {
-                show.innerHTML = `HIHI`;
+                question('에스프레소');
             }
         });
     </script>
