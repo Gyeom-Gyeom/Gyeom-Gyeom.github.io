@@ -34,15 +34,19 @@
             <button class="number-question">25</button>
         </div>
         <br>
-        <p id="check"><br></p>
+        <p id="check">몇 문제를 푸시겠습니까?</p>
         <br>
         2. 랜덤 문제 풀기
-        <br>
+        <br><br>
         <button id="start-game">Start Game</button>
         <br><br>
         3. 정답률 및 오답 확인
         <br>
-        <p id="result"><br></p>
+        <p id="result">
+            전체 문제 수: <br>
+            맞춘 문제 수: <br>
+            정답률: %
+        </p>
         <br>
         <script>
             const numberQuestions = document.querySelectorAll('.number-question');
@@ -58,14 +62,14 @@
                     numberOfSelectedQuestion = numberQuestion.textContent;
                     check.innerHTML = `${numberOfSelectedQuestion} 문제를 푸시겠습니까?`;
                     console.log(`${numberOfSelectedQuestion}`);
+                    result.innerHTML = `
+                    전체 문제 수: ${numberOfSelectedQuestion}개<br>
+                    맞춘 문제 수: ${numberOfCorrectedQuestion}개<br>
+                    정답률: ${correctRate}%
+                    `;
                 });
             });
 
-            result.innerHTML = `
-            전체 문제 수: ${numberOfSelectedQuestion}<br>
-            맞춘 문제 수: ${numberOfCorrectedQuestion}<br>
-            정답률: ${correctRate}%
-            `;
 
         </script>
     </body>
