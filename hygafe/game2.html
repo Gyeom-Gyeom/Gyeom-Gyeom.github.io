@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- Code by Gyeom -->
+<!-- Hygafe X Gyeom -->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휘카페 매뉴얼 게임</title>
+
+    <style>
+        *, *::before, *::after{
+            margin:0;
+            box-sizing: border-box;
+            position: relative;
+            font-weight: 400;
+        }
+        html,body{
+            height:100%;
+            overscroll-behavior: none;
+        }
+        html{
+            user-select: none;
+            -webkit-user-select: none;
+            scroll-behavior: smooth;
+        }
+        body{
+            line-height: 1.6;
+        }
+        button{
+            cursor: pointer;
+            border: none;
+            -webkit-tap-highlight-color : transparent;
+        }
+
+        #background{
+            background-attachment: scroll;
+            background-clip: border-box;
+            background-color: rgba(0,0,0,0);
+            background-image: url(https://modo-phinf.pstatic.net/20240131_51/1706687185628L2WsC_JPEG/mosakPZjFG.jpeg);
+            background-origin: padding-box;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100vh;
+            transform: translateZ(0);
+        }
+        #background::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #0009;
+        }
+        #background.darken::after {
+            background-color: #000d;
+        }
+        #app{
+            padding: 0;
+            font-weight: 400;
+            height: 100%;
+            margin: 0 auto;
+            max-width: 425px;
+        }
+        #zero-page{
+            height: 100vh;
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="background"></div>
+        <div id="show">
+            <div id="zero-page">
+                <p>
+                    휘카페 매뉴얼 숙지를 위한
+                    <br>
+                    게임을 제공하는 사이트 입니다.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const show = document.getElementById('show');
+
+        let pageNumber = 0;
+        document.getElementById('zero-page').addEventListener('click', function() {
+            pageNumber = 1;
+            console.log(`0th page is clicked!`);
+        });
+    </script>
+</body>
+</html>
