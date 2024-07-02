@@ -124,14 +124,9 @@
         let numberOfCorrectedQuestion = 0;
         let currentGameNumber = 0;
 
-        function question(menu) {
-            show.innerHTML = `${menu}`;
-        };
-
         document.addEventListener('click', function(event) {
             if (event.target.classList.contains('number-question')) {
                 numberOfSelectedQuestion = event.target.textContent;
-                console.log(`${numberOfSelectedQuestion}개를 선택하셨습니다.`);
                 const beforeGameCheck = document.getElementById('before-game-check');
                 beforeGameCheck.innerHTML = `
                 <div id="check-number-questions">${numberOfSelectedQuestion}개를 선택하신게 맞나요?</div>
@@ -142,7 +137,7 @@
             else if (event.target.id === 'start-game') {
                 numberOfSelectedQuestion = 0;
                 if (currentGameNumber < numberOfSelectedQuestion){
-                    question('에스프레소');
+                    renderQuestion('에스프레소');
                 }
                 else {
                     let correctRate = numberOfCorrectedQuestion / numberOfSelectedQuestion * 100;
@@ -153,6 +148,10 @@
                 renderFristPage();
             }
         });
+
+        function renderQuestion(menu) {
+            show.innerHTML = `${menu}`;
+        };
 
         function renderFristPage(){
             show.innerHTML = `
@@ -176,6 +175,7 @@
             `;
         }
         function renderResultPage(correctRate){
+            if (isNaN(correctRate)){ correctRate = 0; }
             show.innerHTML = `
             <div id="result-page">
                 전체 문제 수: ${numberOfSelectedQuestion}개<br>
