@@ -68,7 +68,7 @@
             margin: 0 auto;
             max-width: 425px;
         }
-        #zero-page,#first-page, #result-page{
+        #zero-page, #first-page, #result-page{
             height: 100vh;
             font-size: 2rem;
             color: white;
@@ -91,6 +91,20 @@
             font-size: 2rem;
             padding: 3rem;
             border-radius: 2rem;
+        }
+        #game-page{
+            height: 100vh;
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            align-content: center;
+        }
+        #game-page > .current-number{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1rem;
+            color: white;
         }
     </style>
 </head>
@@ -116,7 +130,6 @@
         const numberQuestions = document.querySelectorAll('.number-question');
 
         document.getElementById('zero-page').addEventListener('click', function() {
-            console.log(`0th page is clicked!`);
             renderFristPage();
         });
 
@@ -134,10 +147,10 @@
                 <button id="start-game">Start Game</button>
                 `;
             }
-            else if (event.target.id === 'start-game') {
-                numberOfSelectedQuestion = 0;
+            else if (event.target.id === 'start-game' || event.target.id === 'next-problem') {
                 if (currentGameNumber < numberOfSelectedQuestion){
-                    renderQuestion('에스프레소');
+                    currentGameNumber = currentGameNumber + 1;
+                    renderQuestion('에스프레소', currentGameNumber);
                 }
                 else {
                     let correctRate = numberOfCorrectedQuestion / numberOfSelectedQuestion * 100;
@@ -149,8 +162,14 @@
             }
         });
 
-        function renderQuestion(menu) {
-            show.innerHTML = `${menu}`;
+        function renderQuestion(menu, currentGameNumber) {
+            show.innerHTML = `
+            <div id="game-page">
+                <div class="current-number">${currentGameNumber} / ${numberOfSelectedQuestion}</div>
+                ${menu}<br>
+                <button id="next-problem">다음 문제</button>
+            </div>
+            `;
         };
 
         function renderFristPage(){
