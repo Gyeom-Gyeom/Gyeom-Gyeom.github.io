@@ -10,9 +10,9 @@
     </head>
     <body>
         휘카페 매뉴얼 숙지를 위한 게임을 제공하는 사이트 입니다
-        <br>
+        <br><br>
         1. 몇 개의 문제를 풀 것인지 선택 (최대 25개)
-        <br>
+        <br><br>
         <div id="select-number-questions">
             <button class="number-question">5</button>
             <button class="number-question">10</button>
@@ -21,13 +21,37 @@
             <button class="number-question">25</button>
         </div>
         <br>
+        <p id="check"><br></p>
+        <br>
         2. 랜덤 문제 풀기
         <br>
+        <button id="start-game">Start Game</button>
+        <br><br>
         3. 정답률 및 오답 확인
+        <br>
+        <p id="result"><br></p>
+        <br>
         <script>
             const numberQuestions = document.querySelectorAll('.number-question');
+            const check = document.getElementById('check');
+            const startGame = document.getElementById('start-game');
+            const result = document.getElementById('result');
+
+            let NumberOfSelectedQuestion = 0;
             numberQuestions.forEach(numberQuestion => {
-                numberQuestion  });
+                numberQuestion.addEventListener('click', async function () {
+                    NumberOfSelectedQuestion = numberQuestion.textContent;
+                    check.innerHTML = `${NumberOfSelectedQuestion} 문제를 푸시겠습니까?`;
+                    console.log(`${NumberOfSelectedQuestion}`);
+                });
+            });
+
+            result.innerHTML = `
+            전체 문제 수: ${NumberOfSelectedQuestion}<br>
+            맞춘 문제 수: ${0}<br>
+            정답률: ${0}%
+            `;
+
         </script>
     </body>
 </html>
