@@ -68,7 +68,7 @@
             margin: 0 auto;
             max-width: 425px;
         }
-        #zero-page,#first-page{
+        #zero-page,#first-page, #result-page{
             height: 100vh;
             font-size: 2rem;
             color: white;
@@ -117,25 +117,7 @@
 
         document.getElementById('zero-page').addEventListener('click', function() {
             console.log(`0th page is clicked!`);
-            show.innerHTML = `
-            <div id="first-page">
-                <p>
-                    몇 문제를
-                    <br>
-                    푸시겠습니까?
-                    <br>
-                    (최대 25개)
-                </p>
-                <div id="select-number-questions">
-                    <button class="number-question">5</button>
-                    <button class="number-question">10</button>
-                    <button class="number-question">15</button>
-                    <button class="number-question">20</button>
-                    <button class="number-question">25</button>
-                </div>
-                <div id="before-game-check"></div>
-            </div>
-            `;
+            renderFristPage();
         });
 
         let numberOfSelectedQuestion = 5;
@@ -158,9 +140,50 @@
                 `;
             }
             else if (event.target.id === 'start-game') {
-                question('에스프레소');
+                numberOfSelectedQuestion = 0;
+                if (currentGameNumber < numberOfSelectedQuestion){
+                    question('에스프레소');
+                }
+                else {
+                    let correctRate = numberOfCorrectedQuestion / numberOfSelectedQuestion * 100;
+                    renderResultPage(correctRate);
+                }
+            }
+            else if (event.target.id === 'result-page'){
+                renderFristPage();
             }
         });
+
+        function renderFristPage(){
+            show.innerHTML = `
+            <div id="first-page">
+                <p>
+                    몇 문제를
+                    <br>
+                    푸시겠습니까?
+                    <br>
+                    (최대 25개)
+                </p>
+                <div id="select-number-questions">
+                    <button class="number-question">5</button>
+                    <button class="number-question">10</button>
+                    <button class="number-question">15</button>
+                    <button class="number-question">20</button>
+                    <button class="number-question">25</button>
+                </div>
+                <div id="before-game-check"></div>
+            </div>
+            `;
+        }
+        function renderResultPage(correctRate){
+            show.innerHTML = `
+            <div id="result-page">
+                전체 문제 수: ${numberOfSelectedQuestion}개<br>
+                맞춘 문제 수: ${numberOfCorrectedQuestion}개<br>
+                정답률: ${correctRate}%
+            </div>
+            `;
+        }
     </script>
 </body>
 </html>
