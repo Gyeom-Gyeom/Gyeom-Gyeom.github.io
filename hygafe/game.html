@@ -37,19 +37,21 @@
             const startGame = document.getElementById('start-game');
             const result = document.getElementById('result');
 
-            let NumberOfSelectedQuestion = 0;
+            let numberOfSelectedQuestion = 5;
+            let numberOfCorrectedQuestion = 0;
+            let correctRate = numberOfCorrectedQuestion / numberOfSelectedQuestion * 100;
             numberQuestions.forEach(numberQuestion => {
                 numberQuestion.addEventListener('click', async function () {
-                    NumberOfSelectedQuestion = numberQuestion.textContent;
-                    check.innerHTML = `${NumberOfSelectedQuestion} 문제를 푸시겠습니까?`;
-                    console.log(`${NumberOfSelectedQuestion}`);
+                    numberOfSelectedQuestion = numberQuestion.textContent;
+                    check.innerHTML = `${numberOfSelectedQuestion} 문제를 푸시겠습니까?`;
+                    console.log(`${numberOfSelectedQuestion}`);
                 });
             });
 
             result.innerHTML = `
-            전체 문제 수: ${NumberOfSelectedQuestion}<br>
-            맞춘 문제 수: ${0}<br>
-            정답률: ${0}%
+            전체 문제 수: ${numberOfSelectedQuestion}<br>
+            맞춘 문제 수: ${numberOfCorrectedQuestion}<br>
+            정답률: ${correctRate}%
             `;
 
         </script>
