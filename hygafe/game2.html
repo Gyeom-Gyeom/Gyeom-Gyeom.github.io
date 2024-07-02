@@ -1,103 +1,77 @@
 <!DOCTYPE html>
 <!-- Code by Gyeom -->
 <!-- Hygafe X Gyeom -->
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>휘카페 매뉴얼 게임</title>
-
-    <style>
-        *, *::before, *::after{
-            margin:0;
-            box-sizing: border-box;
-            position: relative;
-            font-weight: 400;
-        }
-        html,body{
-            height:100%;
-            overscroll-behavior: none;
-        }
-        html{
-            user-select: none;
-            -webkit-user-select: none;
-            scroll-behavior: smooth;
-        }
-        body{
-            line-height: 1.6;
-        }
-        button{
-            cursor: pointer;
-            border: none;
-            -webkit-tap-highlight-color : transparent;
-        }
-
-        #background{
-            background-attachment: scroll;
-            background-clip: border-box;
-            background-color: rgba(0,0,0,0);
-            background-image: url(https://modo-phinf.pstatic.net/20240131_51/1706687185628L2WsC_JPEG/mosakPZjFG.jpeg);
-            background-origin: padding-box;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            position: fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height: 100vh;
-            transform: translateZ(0);
-        }
-        #background::after{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: #0009;
-        }
-        #background.darken::after {
-            background-color: #000d;
-        }
-        #app{
-            padding: 0;
-            font-weight: 400;
-            height: 100%;
-            margin: 0 auto;
-            max-width: 425px;
-        }
-        #zero-page{
-            height: 100vh;
-            font-size: 2rem;
-            color: white;
-            text-align: center;
-            align-content: center;
-        }
-    </style>
-</head>
-<body>
-    <div id="app">
-        <div id="background"></div>
-        <div id="show">
-            <div id="zero-page">
-                <p>
-                    휘카페 매뉴얼 숙지를 위한
-                    <br>
-                    게임을 제공하는 사이트 입니다.
-                </p>
-            </div>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>휘카페 매뉴얼 게임</title>
+        <style>
+            #select-number-questions{
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap:2rem;
+                padding: 1rem;
+            }
+            .number-question{
+                padding:0.5rem 1rem;
+                border-radius: 20%;
+                border: 1px solid gray;
+                box-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+            }
+        </style>
+    </head>
+    <body style="width:425px;">
+        0. 휘카페 매뉴얼 숙지를 위한 게임을 제공하는 사이트
+        <br><br>
+        1. 몇 개의 문제를 풀 것인지 선택 (최대 25개)
+        <br><br>
+        <div id="select-number-questions">
+            <button class="number-question">5</button>
+            <button class="number-question">10</button>
+            <button class="number-question">15</button>
+            <button class="number-question">20</button>
+            <button class="number-question">25</button>
         </div>
-    </div>
-    <script>
-        const show = document.getElementById('show');
+        <br>
+        <p id="check">몇 문제를 푸시겠습니까?</p>
+        <br>
+        2. 랜덤 문제 풀기
+        <br><br>
+        <button id="start-game">Start Game</button>
+        <br><br>
+        3. 정답률 및 오답 확인
+        <br>
+        <p id="result">
+            전체 문제 수: <br>
+            맞춘 문제 수: <br>
+            정답률: %
+        </p>
+        4. 정답 확인 후 초기 화면으로
+        <br>
+        <script>
+            const numberQuestions = document.querySelectorAll('.number-question');
+            const check = document.getElementById('check');
+            const startGame = document.getElementById('start-game');
+            const result = document.getElementById('result');
 
-        let pageNumber = 0;
-        document.getElementById('zero-page').addEventListener('click', function() {
-            pageNumber = 1;
-            console.log(`0th page is clicked!`);
-        });
-    </script>
-</body>
+            let numberOfSelectedQuestion = 5;
+            let numberOfCorrectedQuestion = 0;
+            let correctRate = numberOfCorrectedQuestion / numberOfSelectedQuestion * 100;
+
+            numberQuestions.forEach(numberQuestion => {
+                numberQuestion.addEventListener('click', async function () {
+                    numberOfSelectedQuestion = numberQuestion.textContent;
+                    check.innerHTML = `${numberOfSelectedQuestion} 문제를 푸시겠습니까?`;
+                    result.innerHTML = `
+                    전체 문제 수: ${numberOfSelectedQuestion}개<br>
+                    맞춘 문제 수: ${numberOfCorrectedQuestion}개<br>
+                    정답률: ${correctRate}%
+                    `;
+                });
+            });
+
+
+        </script>
+    </body>
 </html>
