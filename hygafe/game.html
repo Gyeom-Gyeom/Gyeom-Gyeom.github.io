@@ -156,8 +156,8 @@
         </div>
     </div>
     <script>
-        const background = document.getElementById('background');
         const total_number_recipe = 25;
+        const background = document.getElementById('background');
         const show = document.getElementById('show');
         const numberQuestions = document.querySelectorAll('.number-question');
 
@@ -181,15 +181,15 @@
             }
             else if (event.target.classList.contains('button-game-button')) {
                 event.target.classList.toggle('opacity0');
-                if (event.target.classList.contains('one')) { arrAnswer.push(1); console.log(`arrAnswer [${arrAnswer}]`); }
-                else if (event.target.classList.contains('two')) { arrAnswer.push(2); console.log(`arrAnswer [${arrAnswer}]`); }
-                else if (event.target.classList.contains('three')) { arrAnswer.push(3); console.log(`arrAnswer [${arrAnswer}]`); }
-                else if (event.target.classList.contains('four')) { arrAnswer.push(4); console.log(`arrAnswer [${arrAnswer}]`); }
-                else if (event.target.classList.contains('five')) { arrAnswer.push(5); console.log(`arrAnswer [${arrAnswer}]`); }
-                else if (event.target.classList.contains('six')) { arrAnswer.push(6); console.log(`arrAnswer [${arrAnswer}]`); }
-                else if (event.target.classList.contains('seven')) { arrAnswer.push(7); console.log(`arrAnswer [${arrAnswer}]`); }
-                else if (event.target.classList.contains('eight')) { arrAnswer.push(8); console.log(`arrAnswer [${arrAnswer}]`); }
-                else if (event.target.classList.contains('nine')) { arrAnswer.push(9); console.log(`arrAnswer [${arrAnswer}]`); }
+                if (event.target.classList.contains('one')) { arrAnswer.push(1); }
+                else if (event.target.classList.contains('two')) { arrAnswer.push(2); }
+                else if (event.target.classList.contains('three')) { arrAnswer.push(3); }
+                else if (event.target.classList.contains('four')) { arrAnswer.push(4); }
+                else if (event.target.classList.contains('five')) { arrAnswer.push(5); }
+                else if (event.target.classList.contains('six')) { arrAnswer.push(6); }
+                else if (event.target.classList.contains('seven')) { arrAnswer.push(7); }
+                else if (event.target.classList.contains('eight')) { arrAnswer.push(8); }
+                else if (event.target.classList.contains('nine')) { arrAnswer.push(9); }
             }
             else if (event.target.id === 'start-game') {
                 background.classList.toggle('darken');
@@ -207,7 +207,6 @@
                     }
                     if (isCorrect === true) { numberOfCorrectedQuestion += 1; }
                 }
-                console.log(`numberOfCorrectedQuestion = ${numberOfCorrectedQuestion}`);
                 for(;arrAnswer.length;){ arrAnswer.splice(0,1); }
 
                 if (currentGameNumber < numberOfSelectedQuestion){
@@ -631,7 +630,6 @@
         function randomMenuNum(currentGameNumber){
             if (currentGameNumber == 1){
                 if (semiArr.length > 0) {
-                    console.log(`semiArr: ${semiArr}`);
                     for (; semiArr.length; ){ semiArr.splice(0, 1); }
                 }
 
@@ -649,7 +647,6 @@
             let index = Math.floor(Math.random() * arr.length);
             let ret = arr[index];
             arr.splice(index, 1);
-            console.log(`Question Number is ${ret}`);
             return ret;
         }
 
