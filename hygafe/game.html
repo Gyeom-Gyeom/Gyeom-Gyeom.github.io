@@ -111,6 +111,18 @@
             padding: 1rem 2rem;
             border-radius: 1rem;
         }
+        .button-game-button{
+            background: linear-gradient(
+                90deg,
+                transparent 10%,
+                gray 10%,
+                gray 90%,
+                transparent 90%
+            );
+            width:100%;
+            font-size: 1rem;
+            height:3rem;
+        }
     </style>
 </head>
 <body>
@@ -153,7 +165,33 @@
                 <button id="start-game">Start Game</button>
                 `;
             }
-            else if (event.target.id === 'start-game' || event.target.id === 'next-problem') {
+            else if (event.target.classList.contains('one')) { arrAnswer.push(1); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('two')) { arrAnswer.push(2); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('three')) { arrAnswer.push(3); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('four')) { arrAnswer.push(4); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('five')) { arrAnswer.push(5); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('six')) { arrAnswer.push(6); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('seven')) { arrAnswer.push(7); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('eight')) { arrAnswer.push(8); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('nine')) { arrAnswer.push(9); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.id === 'start-game') {
+                currentGameNumber = currentGameNumber + 1;
+                renderQuestion(randomMenuNum(currentGameNumber), currentGameNumber);
+            }
+            else if (event.target.id === 'next-problem') {
+                if(arrAnswer.length > 0){
+                    let isCorrect = true;
+                    for (let i=0; i<arrAnswer.length; i++){
+                        if (arrAnswer[i] != i + 1){
+                            isCorrect = false;
+                            break ;
+                        }
+                    }
+                    if (isCorrect === true) { numberOfCorrectedQuestion += 1; }
+                }
+                console.log(`numberOfCorrectedQuestion = ${numberOfCorrectedQuestion}`);
+                for(;arrAnswer.length;){ arrAnswer.splice(0,1); }
+
                 if (currentGameNumber < numberOfSelectedQuestion){
                     currentGameNumber = currentGameNumber + 1;
                     renderQuestion(randomMenuNum(currentGameNumber), currentGameNumber);
@@ -169,6 +207,7 @@
             }
         });
 
+        let arrAnswer = [];
         function renderQuestion(questionNumber, currentGameNumber) {
             show.innerHTML = `
                 <div id="game-page">
@@ -182,41 +221,228 @@
                 <br>
             `;
             gamePage.innerHTML += buttonGame(questionNumber);
-            gamePage.innerHTML += `<br>`;
-            if (currentGameNumber < numberOfSelectedQuestion){ gamePage.innerHTML += `<button id="next-problem">다음 문제</button>`; }
-            else { gamePage.innerHTML += `<button id="next-problem">결과 보가</button>`; }
+            gamePage.innerHTML += `<br><br>`;
+            if (currentGameNumber < numberOfSelectedQuestion){
+                gamePage.innerHTML += `<button id="next-problem">다음 문제</button>`;
+            }
+            else {
+                for(;arrAnswer.length;){ arrAnswer.splice(0,1); }
+                gamePage.innerHTML += `<button id="next-problem">결과 보기</button>`;
+            }
         };
-        
+
         function buttonGame(questionNumber){
             // 랜덤하게 button 생성시키고 선택하면 그거 사라지고
             // 나머지들만 남으면서 위로 올라가지 않게 (아마 선택한거 투명화 같은거 해야할듯)
             // 그리고 진짜 순서랑 일치하는지 체크해서 numberOfCorrectedQuestion 올릴지 말지 체크
-            if (questionNumber === 1){ return `에스프레소`; }
-            else if (questionNumber === 2){ return `따뜻한 아메리카노`; }
-            else if (questionNumber === 3){ return `아이스 아메리카노`; }
-            else if (questionNumber === 4){ return `따뜻한 카페라떼`; }
-            else if (questionNumber === 5){ return `아이스 카페라떼`; }
-            else if (questionNumber === 6){ return `따뜻한 카푸치노`; }
-            else if (questionNumber === 7){ return `따뜻한 바닐라 라떼`; }
-            else if (questionNumber === 8){ return `아이스 바닐라 라떼`; }
-            else if (questionNumber === 9){ return `따뜻한 카페모카`; }
-            else if (questionNumber === 10){ return `아이스 카페모카`; }
-            else if (questionNumber === 11){ return `따뜻한 카라멜 마끼아또`; }
-            else if (questionNumber === 12){ return `아이스 카라멜 마끼아또`; }
-            else if (questionNumber === 13){ return `따뜻한 녹차라떼`; }
-            else if (questionNumber === 14){ return `아이스 녹차라떼`; }
-            else if (questionNumber === 15){ return `따뜻한 초코라떼`; }
-            else if (questionNumber === 16){ return `아이스 초코라떼`; }
-            else if (questionNumber === 17){ return `아이스 복숭아 / 레몬 아이스티`; }
-            else if (questionNumber === 18){ return `아이스 레몬 에이드`; }
-            else if (questionNumber === 19){ return `아이스 패션후르츠에이드`; }
-            else if (questionNumber === 20){ return `따뜻한 캐모마일 / 페퍼민트 <br>/ 얼그레이 허브티`; }
-            else if (questionNumber === 21){ return `아이스 캐모마일 / 페퍼민트 <br>/ 얼그레이 허브티`; }
-            else if (questionNumber === 22){ return `따뜻한 유자 캐모마일 허브티`; }
-            else if (questionNumber === 23){ return `아이스 유자 캐모마일 허브티`; }
-            else if (questionNumber === 24){ return `아이스 오곡 소이라떼`; }
-            else if (questionNumber === 25){ return `아이스 식혜`; }
-            else { return `버그걸림...
+            if (questionNumber === 1){ return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">분쇄원두 양은 18.1-18.5g 적정무게로 맞추기</button>
+                <button class="button-game-button three">계량이 적으면 가운데 포터필터 모양 누르기</button>
+                <button class="button-game-button four">에스프레소 머신 “두 잔 버튼”을 눌러 샷 추출하기</button>
+                `;
+            }
+            else if (questionNumber === 2) { return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">에스프레소 추출</button>
+                <button class="button-game-button three">컵의 70%까지 뜨거운 물 채우기</button>
+                <button class="button-game-button four">컵에 추출한 에스프레소 롤링하며 담기</button>
+                `;
+            }
+            else if (questionNumber === 3) { return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">에스프레소 추출</button>
+                <button class="button-game-button three">컵의 80%까지 얼음 채우기</button>
+                <button class="button-game-button four">컵에 물을 채운 후 추출한 에스프레소 롤링하며 담기</button>
+                `;
+            }
+            else if (questionNumber === 4) { return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">에스프레소 추출</button>
+                <button class="button-game-button three">우유 200ml 스티밍</button>
+                <button class="button-game-button four">컵에 추출한 에스프레소 담고 스티밍 우유 푸어링</button>
+                `;
+            }
+            else if (questionNumber === 5) { return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">에스프레소 추출</button>
+                <button class="button-game-button three">컵의 80%까지 얼음 채우기</button>
+                <button class="button-game-button four">컵에 우유 200ml 담기</button>
+                <button class="button-game-button five">컵에 추출한 에스프레소 담기</button>
+                `;
+            }
+            else if (questionNumber === 6) { return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">에스프레소 추출</button>
+                <button class="button-game-button three">우유 200ml 스티밍</button>
+                <button class="button-game-button four">컵에 추출한 에스프레소 담고 스티밍 우유 푸어링</button>
+                <button class="button-game-button five">사전 확인 후, 시나몬 가루 토핑</button>
+                `;
+            }
+            else if (questionNumber === 7) { return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">샷잔에 바닐라시럽 한 펌프 + 바닐라파우더 20g 넣기</button>
+                <button class="button-game-button three">샷잔에 에스프레소 추출 후 섞어주기</button>
+                <button class="button-game-button four">우유 200ml 스티밍</button>
+                <button class="button-game-button five">컵에 바닐라시럽, 파우더 섞은 에스프레소 넣기</button>
+                <button class="button-game-button six">스티밍 우유 푸어링</button>
+                `;
+            }
+            else if (questionNumber === 8) { return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">샷잔에 바닐라시럽 한 펌프 + 바닐라파우더 20g 넣기</button>
+                <button class="button-game-button three">샷잔에 에스프레소 추출 후 섞어주기</button>
+                <button class="button-game-button four">컵에 얼음 80% 채우기</button>
+                <button class="button-game-button five">컵에 우유 80% 채우기</button>
+                <button class="button-game-button six">컵에 바닐라시럽, 파우더 섞은 에스프레소 담기</button>
+                `;
+            }
+            else if (questionNumber === 9) { return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">샷잔에 초콜릿소스 38g 넣기</button>
+                <button class="button-game-button three">샷잔에 에스프레소 추출 후 섞어주기</button>
+                <button class="button-game-button four">우유 200ml 스티밍</button>
+                <button class="button-game-button five">컵에 초콜릿소스 섞은 에스프레소 넣기</button>
+                <button class="button-game-button six">스티밍한 우유 넣기</button>
+                `;
+            }
+            else if (questionNumber === 10){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">샷잔에 초콜릿소스 38g 넣기</button>
+                <button class="button-game-button three">샷잔에 에스프레소 추출 후 섞어주기</button>
+                <button class="button-game-button four">컵에 얼음 80% 채우기</button>
+                <button class="button-game-button five">컵에 우유 80% 채우기</button>
+                <button class="button-game-button six">컵에 초콜릿시럽 섞은 에스프레소 담기</button>
+                `;
+            }
+            else if (questionNumber === 11){ return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">샷잔에 바닐라시럽 한 펌프 + 카라멜소스 38g 넣기</button>
+                <button class="button-game-button three">샷잔에 에스프레소 추출 후 섞기</button>
+                <button class="button-game-button four">우유 200ml 스티밍</button>
+                <button class="button-game-button five">빈 컵에 스티밍한 우유 반 넣기</button>
+                <button class="button-game-button six">컵에 바닐라시럽, 카라멜소스 섞은 에스프레소 넣기</button>
+                <button class="button-game-button seven">컵에 나머지 우유 넣기</button>
+                <button class="button-game-button eight">격자무늬로 카라멜소스 드리즐 마무리</button>
+                `;
+            }
+            else if (questionNumber === 12){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">샷잔에 바닐라시럽 한 펌프 + 카라멜소스 38g 넣기</button>
+                <button class="button-game-button three">샷잔에 에스프레소 추출 후 섞기</button>
+                <button class="button-game-button four">빈 컵에 얼음 50% 넣기</button>
+                <button class="button-game-button five">우유 200ml 준비 후 펌프질 50~60번 하기</button>
+                <button class="button-game-button six">얼음 넣은 컵에 펌프질한 우유 반 넣기</button>
+                <button class="button-game-button seven">컵에 바닐라시럽, 카라멜소스 섞은 에스프레소 넣기</button>
+                <button class="button-game-button eight">컵에 나머지 우유 넣기</button>
+                <button class="button-game-button nine">격자무늬로 카라멜소스 드리즐 마무리</button>
+                `;
+            }
+            else if (questionNumber === 13){ return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">스팀피처 코선까지 우유 담고 녹차파우더 28g 넣기</button>
+                <button class="button-game-button three">바스푼으로 젓기</button>
+                <button class="button-game-button four">스팀피처의 우유 스티밍</button>
+                <button class="button-game-button five">빈 머그잔에 스티밍한 녹차라떼 붓기</button>
+                `;
+            }
+            else if (questionNumber === 14){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">스팀피처에 녹차파우더 30g 넣기</button>
+                <button class="button-game-button three">스팀피처 코선까지 우유 붓고 바스푼으로 젓기</button>
+                <button class="button-game-button four">스팀피처의 우유 살짝(미지근) 스티밍</button>
+                <button class="button-game-button five">컵에 얼음 60% 채우기</button>
+                <button class="button-game-button six">얼음이 담긴 컵에 셰이커의 녹차라떼 붓기</button>
+                `;
+            }
+            else if (questionNumber === 15){ return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">스팀피처에 모닌초코소스 28g + 더블핫초콜릿파우더 28g 넣기</button>
+                <button class="button-game-button three">스팀피처 코선까지 우유 붓고 바스푼으로 젓기</button>
+                <button class="button-game-button four">스팀피처의 우유 스티밍</button>
+                <button class="button-game-button five">빈 머그잔에 스티밍한 초코라떼 담기</button>
+                <button class="button-game-button six">초콜릿가루(가니쉬) 뿌리기</button>
+                `;
+            }
+            else if (questionNumber === 16){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">스팀피처에 모닌초코소스 28g + 더블핫초콜릿파우더 28g 넣기</button>
+                <button class="button-game-button three">스팀피처 코선까지 우유 붓고 바스푼으로 젓기</button>
+                <button class="button-game-button four">스팀피처의 우유 살짝(미지근) 스티밍</button>
+                <button class="button-game-button five">바스푼으로 초콜릿소스 녹을 때까지 젓기</button>
+                <button class="button-game-button six">컵에 얼음 80% 채우고 초코라떼 담기</button>
+                <button class="button-game-button seven">초콜릿가루(가니쉬) 뿌리기</button>
+                `;
+            }
+            else if (questionNumber === 17){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">바쉐이커에 뜨거운물 조금(1-2cm) 담기</button>
+                <button class="button-game-button three">바쉐이커 아이스티 분말 55g 넣고 바스푼으로 젓기</button>
+                <button class="button-game-button four">빈 컵에 얼음 80% 담고 아이스티 용액 넣기</button>
+                <button class="button-game-button five">얼음잔에 정수물 가득 넣고 바스푼으로 가볍게 젓기</button>
+                `;
+            }
+            else if (questionNumber === 18){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">빈 컵에 에이드청 80g 넣기</button>
+                <button class="button-game-button three">에이드청 넣은 컵에 얼음 50% 넣기</button>
+                <button class="button-game-button four">컵을 기울이고 사이다 1캔 붓기</button>
+                <button class="button-game-button five">바스푼으로 탄산이 날아가지 않도록 살짝 젓기</button>
+                <button class="button-game-button six">컵 가득 차도록 얼음 추가</button>
+                `;
+            }
+            else if (questionNumber === 19){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">빈 컵에 에이드청 80g 넣기</button>
+                <button class="button-game-button three">에이드청 넣은 컵에 얼음 50% 넣기</button>
+                <button class="button-game-button four">컵을 기울이고 탄산수 1캔 붓기</button>
+                <button class="button-game-button five">바스푼으로 탄산이 날아가지 않도록 살짝 젓기</button>
+                <button class="button-game-button six">컵 가득 차도록 얼음 추가</button>
+                `;
+            }
+            else if (questionNumber === 20){ return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">머그잔에 티백 1개 넣고 뜨거운물 가득 채우기</button>
+                <button class="button-game-button three">티백 1분간 우리기</button>
+                `;
+            }
+            else if (questionNumber === 21){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">소형포터필터에 티백 2개를 넣고 2분간 우리기</button>
+                <button class="button-game-button three">빈 잔에 티백 1개 넣고 얼음 80% 넣기</button>
+                <button class="button-game-button four">얼음잔에 우려낸 차 붓기</button>
+                <button class="button-game-button five">컵 가득 정수물 채우기</button>
+                `;
+            }
+            else if (questionNumber === 22){ return `
+                <button class="button-game-button one">12oz 컵 준비</button>
+                <button class="button-game-button two">머그잔에 유자청 45g + 티백 1개 넣기</button>
+                <button class="button-game-button three">뜨거운 물을 가득 채우고 1분간 우리기</button>
+                `;
+            }
+            else if (questionNumber === 23){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">소형포터필터에 티백 2개를 넣고 2분간 우리기</button>
+                <button class="button-game-button three">빈 잔에 유자청 50g + 티백 1개 넣기</button>
+                <button class="button-game-button four">컵에 얼음 80% 채우고 우려낸 차 붓기</button>
+                <button class="button-game-button five">컵 가득 정수물 채우기</button>
+                <button class="button-game-button six">바스푼으로 청이 섞이도록 위아래로 젓기</button>
+                `;
+            }
+            else if (questionNumber === 24){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">빈 컵에 미숫가루 30g + 슈가시럽 한 펌프 넣기</button>
+                <button class="button-game-button three">컵에 두유 한 팩 넣고 섞이도록 젓기</button>
+                <button class="button-game-button four">얼음 가득 채우기</button>
+                `;
+            }
+            else if (questionNumber === 25){ return `
+                <button class="button-game-button one">16oz 컵 준비</button>
+                <button class="button-game-button two">빈 컵에 얼음 80% 넣기</button>
+                <button class="button-game-button three">컵에 식혜 가득 채우기</button>
+                `;
+            }
+            else { return `
                 만약 지금 이게 보이면
                 제작자에게 문의해주세요
                 `; }
@@ -282,6 +508,7 @@
         }
 
         function renderFristPage(){
+            numberOfCorrectedQuestion = 0;
             show.innerHTML = `
             <div id="first-page">
                 <p>
