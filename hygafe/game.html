@@ -72,19 +72,17 @@
             max-width: 425px;
         }
         #zero-page, #first-page, #result-page{
-            justify-self: center;
-            align-self: center;
-            justify-content: center;
-            align-content: center;
-            justify-items: center;
-            align-items: center;
-            text-justify: center;
-
             height: 100vh;
             font-size: 2rem;
             color: white;
             text-align: center;
-            /* border: 1px solid red; */
+            align-content: center;
+        }
+        #zero-page > p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         #select-number-questions{
             display: grid;
