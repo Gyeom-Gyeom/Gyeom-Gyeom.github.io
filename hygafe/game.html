@@ -78,7 +78,7 @@
             text-align: center;
             align-content: center;
         }
-        #zero-page > p{
+        #zero-page > p, #result-page > p{
             position: absolute;
             top: 50%;
             left: 50%;
@@ -147,13 +147,9 @@
         <div id="show">
             <div id="zero-page">
                 <p>
-                    휘카페 레시피
+                    휘카페
                     <br>
-                    숙지를 위한
-                    <br>
-                    게임을 제공하는
-                    <br>
-                    사이트 입니다.
+                    레시피 게임
                 </p>
             </div>
         </div>
@@ -683,9 +679,11 @@
             if (isNaN(correctRate)){ correctRate = 0; }
             show.innerHTML = `
             <div id="result-page">
-                전체 문제 수: ${numberOfSelectedQuestion}개<br>
-                맞춘 문제 수: ${numberOfCorrectedQuestion}개<br>
-                정답률: ${correctRate}%
+                <p>
+                    총 문항 수: ${numberOfSelectedQuestion}개<br>
+                    맞춘 개수: ${numberOfCorrectedQuestion}개<br>
+                    정답률: ${correctRate}%
+                </p>
             </div>
             `;
         }
