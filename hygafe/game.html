@@ -121,6 +121,7 @@
             padding: 1rem 2rem;
             border-radius: 1rem;
             background: var(--clr-concept);
+            color: white;
         }
         .button-game-button{
             background: linear-gradient(
@@ -682,9 +683,9 @@
             show.innerHTML = `
             <div id="result-page">
                 <p>
-                    총 문항 수: ${numberOfSelectedQuestion}개<br>
-                    맞춘 개수: ${numberOfCorrectedQuestion}개<br>
-                    정답률: ${correctRate}%
+                    문항 수: ${numberOfSelectedQuestion}개<br>
+                    정답 수: ${numberOfCorrectedQuestion}개<br>
+                    정답률 : ${correctRate}%
                 </p>
             </div>
             `;
