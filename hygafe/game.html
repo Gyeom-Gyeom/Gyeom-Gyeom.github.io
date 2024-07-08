@@ -78,7 +78,7 @@
             text-align: center;
             align-content: center;
         }
-        #zero-page > p, #result-page > p{
+        #zero-page > p, #result-page > p, #first-page > #first-page-position{
             position: absolute;
             top: 50%;
             left: 50%;
@@ -656,21 +656,23 @@
             numberOfCorrectedQuestion = 0;
             show.innerHTML = `
             <div id="first-page">
-                <p>
-                    몇 문제를
-                    <br>
-                    푸시겠습니까?
-                    <br>
-                    (최대 ${total_number_recipe}개)
-                </p>
-                <div id="select-number-questions">
-                    <button class="number-question">5</button>
-                    <button class="number-question">10</button>
-                    <button class="number-question">15</button>
-                    <button class="number-question">20</button>
-                    <button class="number-question">25</button>
+                <div id="first-page-position">
+                    <p>
+                        몇 문제를
+                        <br>
+                        푸시겠습니까?
+                        <br>
+                        (최대 ${total_number_recipe}개)
+                    </p>
+                    <div id="select-number-questions">
+                        <button class="number-question">5</button>
+                        <button class="number-question">10</button>
+                        <button class="number-question">15</button>
+                        <button class="number-question">20</button>
+                        <button class="number-question">25</button>
+                    </div>
+                    <div id="before-game-check"></div>
                 </div>
-                <div id="before-game-check"></div>
             </div>
             `;
         }
