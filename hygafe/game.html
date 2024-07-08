@@ -126,6 +126,7 @@
         </div>
     </div>
     <script>
+        const total_number_recipe = 25;
         const show = document.getElementById('show');
         const numberQuestions = document.querySelectorAll('.number-question');
 
@@ -170,23 +171,41 @@
                     ${menuNum}<br>
                 </div>
             `;
-
+            // 뭐에 대한 건지 나오고 (아이스 아메리카노)
+            // 순서 무작위로 나오고
+            // 랜덤하게 div 나 button 생성시키고
+            // 선택하면 그거 사라지고
+            // 나머지들만 남으면서 위로 올라가지 않게 (아마 선택한거 투명화 같은거 해야할듯)
+            // 그리고 진짜 순서랑 일치하는지 체크해서 numberOfCorrectedQuestion 올릴지 말지 체크
             const gamePage = document.getElementById('game-page');
             if (currentGameNumber < numberOfSelectedQuestion){ gamePage.innerHTML += `<button id="next-problem">다음 문제</button>`; }
             else { gamePage.innerHTML += `<button id="next-problem">결과 보가</button>`; }
         };
 
+        let arr = [];
+        let semiArr = [];
         function randomMenuNum(currentGameNumber){
             if (currentGameNumber == 1){
-                arr = [];
-                for (let i=1; i<=numberOfSelectedQuestion; i++){
-                    arr.push(i);
+                if (semiArr.length > 0) {
+                    console.log(`semiArr: ${semiArr}`);
+                    for (; semiArr.length; ){ semiArr.splice(0, 1); }
                 }
+
+                for (let i=1; i<=total_number_recipe; i++){ semiArr.push(i); }
+
+                for (let i=1; i<=numberOfSelectedQuestion; i++){
+                    let idx = Math.floor(Math.random() * semiArr.length);
+                    arr.push(semiArr[idx]);
+                    semiArr.splice(idx, 1);
+                }
+                
+                for (; semiArr.length; ){ semiArr.splice(0, 1); }
             }
+            
             let index = Math.floor(Math.random() * arr.length);
             let ret = arr[index];
             arr.splice(index, 1);
-            console.log(`ret is ${ret}`)
+            console.log(`Question Number is ${ret}`);
             return ret;
         }
 
@@ -198,7 +217,7 @@
                     <br>
                     푸시겠습니까?
                     <br>
-                    (최대 25개)
+                    (최대 ${total_number_recipe}개)
                 </p>
                 <div id="select-number-questions">
                     <button class="number-question">5</button>
