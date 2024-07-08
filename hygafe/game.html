@@ -123,6 +123,10 @@
             font-size: 1rem;
             height:3rem;
         }
+        .opacity0{
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -165,15 +169,18 @@
                 <button id="start-game">Start Game</button>
                 `;
             }
-            else if (event.target.classList.contains('one')) { arrAnswer.push(1); console.log(`arrAnswer [${arrAnswer}]`); }
-            else if (event.target.classList.contains('two')) { arrAnswer.push(2); console.log(`arrAnswer [${arrAnswer}]`); }
-            else if (event.target.classList.contains('three')) { arrAnswer.push(3); console.log(`arrAnswer [${arrAnswer}]`); }
-            else if (event.target.classList.contains('four')) { arrAnswer.push(4); console.log(`arrAnswer [${arrAnswer}]`); }
-            else if (event.target.classList.contains('five')) { arrAnswer.push(5); console.log(`arrAnswer [${arrAnswer}]`); }
-            else if (event.target.classList.contains('six')) { arrAnswer.push(6); console.log(`arrAnswer [${arrAnswer}]`); }
-            else if (event.target.classList.contains('seven')) { arrAnswer.push(7); console.log(`arrAnswer [${arrAnswer}]`); }
-            else if (event.target.classList.contains('eight')) { arrAnswer.push(8); console.log(`arrAnswer [${arrAnswer}]`); }
-            else if (event.target.classList.contains('nine')) { arrAnswer.push(9); console.log(`arrAnswer [${arrAnswer}]`); }
+            else if (event.target.classList.contains('button-game-button')) {
+                event.target.classList.toggle('opacity0');
+                if (event.target.classList.contains('one')) { arrAnswer.push(1); console.log(`arrAnswer [${arrAnswer}]`); }
+                else if (event.target.classList.contains('two')) { arrAnswer.push(2); console.log(`arrAnswer [${arrAnswer}]`); }
+                else if (event.target.classList.contains('three')) { arrAnswer.push(3); console.log(`arrAnswer [${arrAnswer}]`); }
+                else if (event.target.classList.contains('four')) { arrAnswer.push(4); console.log(`arrAnswer [${arrAnswer}]`); }
+                else if (event.target.classList.contains('five')) { arrAnswer.push(5); console.log(`arrAnswer [${arrAnswer}]`); }
+                else if (event.target.classList.contains('six')) { arrAnswer.push(6); console.log(`arrAnswer [${arrAnswer}]`); }
+                else if (event.target.classList.contains('seven')) { arrAnswer.push(7); console.log(`arrAnswer [${arrAnswer}]`); }
+                else if (event.target.classList.contains('eight')) { arrAnswer.push(8); console.log(`arrAnswer [${arrAnswer}]`); }
+                else if (event.target.classList.contains('nine')) { arrAnswer.push(9); console.log(`arrAnswer [${arrAnswer}]`); }
+            }
             else if (event.target.id === 'start-game') {
                 currentGameNumber = currentGameNumber + 1;
                 renderQuestion(randomMenuNum(currentGameNumber), currentGameNumber);
@@ -232,9 +239,6 @@
         };
 
         function buttonGame(questionNumber){
-            // 랜덤하게 button 생성시키고 선택하면 그거 사라지고
-            // 나머지들만 남으면서 위로 올라가지 않게 (아마 선택한거 투명화 같은거 해야할듯)
-            // 그리고 진짜 순서랑 일치하는지 체크해서 numberOfCorrectedQuestion 올릴지 말지 체크
             if (questionNumber === 1){ return `
                 <button class="button-game-button one">12oz 컵 준비</button>
                 <button class="button-game-button two">분쇄원두 양은 18.1-18.5g 적정무게로 맞추기</button>
