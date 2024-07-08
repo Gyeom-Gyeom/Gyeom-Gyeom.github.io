@@ -178,17 +178,49 @@
             const gamePage = document.getElementById('game-page');
             let nameOfMenu = menuName(questionNumber);
             gamePage.innerHTML += `
-                ${nameOfMenu}
+                [${nameOfMenu}]
                 <br>
             `;
-            // 뭐에 대한 건지 나오고 (아이스 아메리카노)
-            // 랜덤하게 div 나 button 생성시키고
-            // 선택하면 그거 사라지고
-            // 나머지들만 남으면서 위로 올라가지 않게 (아마 선택한거 투명화 같은거 해야할듯)
-            // 그리고 진짜 순서랑 일치하는지 체크해서 numberOfCorrectedQuestion 올릴지 말지 체크
+            gamePage.innerHTML += buttonGame(questionNumber);
+            gamePage.innerHTML += `<br>`;
             if (currentGameNumber < numberOfSelectedQuestion){ gamePage.innerHTML += `<button id="next-problem">다음 문제</button>`; }
             else { gamePage.innerHTML += `<button id="next-problem">결과 보가</button>`; }
         };
+        
+        function buttonGame(questionNumber){
+            // 랜덤하게 button 생성시키고 선택하면 그거 사라지고
+            // 나머지들만 남으면서 위로 올라가지 않게 (아마 선택한거 투명화 같은거 해야할듯)
+            // 그리고 진짜 순서랑 일치하는지 체크해서 numberOfCorrectedQuestion 올릴지 말지 체크
+            if (questionNumber === 1){ return `에스프레소`; }
+            else if (questionNumber === 2){ return `따뜻한 아메리카노`; }
+            else if (questionNumber === 3){ return `아이스 아메리카노`; }
+            else if (questionNumber === 4){ return `따뜻한 카페라떼`; }
+            else if (questionNumber === 5){ return `아이스 카페라떼`; }
+            else if (questionNumber === 6){ return `따뜻한 카푸치노`; }
+            else if (questionNumber === 7){ return `따뜻한 바닐라 라떼`; }
+            else if (questionNumber === 8){ return `아이스 바닐라 라떼`; }
+            else if (questionNumber === 9){ return `따뜻한 카페모카`; }
+            else if (questionNumber === 10){ return `아이스 카페모카`; }
+            else if (questionNumber === 11){ return `따뜻한 카라멜 마끼아또`; }
+            else if (questionNumber === 12){ return `아이스 카라멜 마끼아또`; }
+            else if (questionNumber === 13){ return `따뜻한 녹차라떼`; }
+            else if (questionNumber === 14){ return `아이스 녹차라떼`; }
+            else if (questionNumber === 15){ return `따뜻한 초코라떼`; }
+            else if (questionNumber === 16){ return `아이스 초코라떼`; }
+            else if (questionNumber === 17){ return `아이스 복숭아 / 레몬 아이스티`; }
+            else if (questionNumber === 18){ return `아이스 레몬 에이드`; }
+            else if (questionNumber === 19){ return `아이스 패션후르츠에이드`; }
+            else if (questionNumber === 20){ return `따뜻한 캐모마일 / 페퍼민트 <br>/ 얼그레이 허브티`; }
+            else if (questionNumber === 21){ return `아이스 캐모마일 / 페퍼민트 <br>/ 얼그레이 허브티`; }
+            else if (questionNumber === 22){ return `따뜻한 유자 캐모마일 허브티`; }
+            else if (questionNumber === 23){ return `아이스 유자 캐모마일 허브티`; }
+            else if (questionNumber === 24){ return `아이스 오곡 소이라떼`; }
+            else if (questionNumber === 25){ return `아이스 식혜`; }
+            else { return `버그걸림...
+                만약 지금 이게 보이면
+                제작자에게 문의해주세요
+                `; }
+        }
 
         function menuName(questionNumber){
             if (questionNumber === 1){ return `에스프레소`; }
@@ -210,8 +242,8 @@
             else if (questionNumber === 17){ return `아이스 복숭아 / 레몬 아이스티`; }
             else if (questionNumber === 18){ return `아이스 레몬 에이드`; }
             else if (questionNumber === 19){ return `아이스 패션후르츠에이드`; }
-            else if (questionNumber === 20){ return `따뜻한 캐모마일 / 페퍼민트 / 얼그레이 허브티`; }
-            else if (questionNumber === 21){ return `아이스 캐모마일 / 페퍼민트 / 얼그레이 허브티`; }
+            else if (questionNumber === 20){ return `따뜻한 캐모마일 / 페퍼민트 <br>/ 얼그레이 허브티`; }
+            else if (questionNumber === 21){ return `아이스 캐모마일 / 페퍼민트 <br>/ 얼그레이 허브티`; }
             else if (questionNumber === 22){ return `따뜻한 유자 캐모마일 허브티`; }
             else if (questionNumber === 23){ return `아이스 유자 캐모마일 허브티`; }
             else if (questionNumber === 24){ return `아이스 오곡 소이라떼`; }
@@ -270,6 +302,7 @@
             </div>
             `;
         }
+
         function renderResultPage(correctRate){
             if (isNaN(correctRate)){ correctRate = 0; }
             show.innerHTML = `
