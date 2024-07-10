@@ -151,6 +151,10 @@
                     휘카페
                     <br>
                     레시피 게임
+                    <br><br>
+                    순서대로
+                    <br>
+                    눌러주세요
                 </p>
             </div>
         </div>
@@ -279,313 +283,118 @@
             return ret;
         }
 
+        function ft_iterButton(iter, strArr){
+            let ret = ``;
+            let classArr = ft_classArr(iter);
+            let idxArr = ft_idxArr(iter);
+            for(let i=0; i<iter; i++){
+                ret += `
+                <button class="button-game-button ${classArr[idxArr[i]]}">${strArr[idxArr[i]]}</button>
+                `;
+            }
+            return ret;
+        }
+
         function buttonGame(questionNumber){
             if (questionNumber === 1){
                 let strArr = ["12oz 컵 준비", "분쇄원두 양은 18.1-18.5g 적정무게로 맞추기", "계량이 적으면 가운데 포터필터 모양 누르기", "에스프레소 머신 “두 잔 버튼”을 눌러 샷 추출하기"];
-                let classArr = ft_classArr(4);
-                let idxArr = ft_idxArr(4);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                `;
+                return ft_iterButton(4, strArr);
             }
             else if (questionNumber === 2) {
                 let strArr = ["12oz 컵 준비", "에스프레소 추출", "컵의 70%까지 뜨거운 물 채우기", "컵에 추출한 에스프레소 롤링하며 담기"];
-                let classArr = ft_classArr(4);
-                let idxArr = ft_idxArr(4);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                `;
+                return ft_iterButton(4, strArr);
             }
             else if (questionNumber === 3) {
                 let strArr = ["16oz 컵 준비", "에스프레소 추출", "컵의 80%까지 얼음 채우기", "컵에 물을 채운 후 추출한 에스프레소 롤링하며 담기"];
-                let classArr = ft_classArr(4);
-                let idxArr = ft_idxArr(4);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                `;
+                return ft_iterButton(4, strArr);
             }
             else if (questionNumber === 4) {
                 let strArr = ["12oz 컵 준비", "에스프레소 추출", "우유 200ml 스티밍", "컵에 추출한 에스프레소 담고 스티밍 우유 푸어링"];
-                let classArr = ft_classArr(4);
-                let idxArr = ft_idxArr(4);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                `;
+                return ft_iterButton(4, strArr);
             }
             else if (questionNumber === 5) {
                 let strArr = ["16oz 컵 준비", "에스프레소 추출", "컵의 80%까지 얼음 채우기", "컵에 우유 200ml 담기", "컵에 추출한 에스프레소 담기"];
-                let classArr = ft_classArr(5);
-                let idxArr = ft_idxArr(5);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                `;
+                return ft_iterButton(5, strArr);
             }
             else if (questionNumber === 6) {
                 let strArr = ["12oz 컵 준비", "에스프레소 추출", "우유 200ml 스티밍", "컵에 추출한 에스프레소 담고 스티밍 우유 푸어링", "사전 확인 후, 시나몬 가루 토핑"];
-                let classArr = ft_classArr(5);
-                let idxArr = ft_idxArr(5);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                `;
+                return ft_iterButton(5, strArr);
             }
             else if (questionNumber === 7) {
                 let strArr = ["12oz 컵 준비", "샷잔에 바닐라시럽 한 펌프 + 바닐라파우더 20g 넣기", "샷잔에 에스프레소 추출 후 섞어주기", "우유 200ml 스티밍", "컵에 바닐라시럽, 파우더 섞은 에스프레소 넣기", "스티밍 우유 푸어링"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 8) {
                 let strArr = ["16oz 컵 준비", "샷잔에 바닐라시럽 한 펌프 + 바닐라파우더 20g 넣기", "샷잔에 에스프레소 추출 후 섞어주기", "컵에 얼음 80% 채우기", "컵에 우유 80% 채우기", "컵에 바닐라시럽, 파우더 섞은 에스프레소 담기"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 9) {
                 let strArr = ["12oz 컵 준비", "샷잔에 초콜릿소스 38g 넣기", "샷잔에 에스프레소 추출 후 섞어주기", "우유 200ml 스티밍", "컵에 초콜릿소스 섞은 에스프레소 넣기", "스티밍한 우유 넣기"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 10){
                 let strArr = ["16oz 컵 준비", "샷잔에 초콜릿소스 38g 넣기", "샷잔에 에스프레소 추출 후 섞어주기", "컵에 얼음 80% 채우기", "컵에 우유 80% 채우기", "컵에 초콜릿시럽 섞은 에스프레소 담기"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 11){
                 let strArr = ["12oz 컵 준비", "샷잔에 바닐라시럽 한 펌프 + 카라멜소스 38g 넣기", "샷잔에 에스프레소 추출 후 섞기", "우유 200ml 스티밍", "빈 컵에 스티밍한 우유 반 넣기", "컵에 바닐라시럽, 카라멜소스 섞은 에스프레소 넣기", "컵에 나머지 우유 넣기", "격자무늬로 카라멜소스 드리즐 마무리"];
-                let classArr = ft_classArr(8);
-                let idxArr = ft_idxArr(8);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                <button class="button-game-button ${classArr[idxArr[6]]}">${strArr[idxArr[6]]}</button>
-                <button class="button-game-button ${classArr[idxArr[7]]}">${strArr[idxArr[7]]}</button>
-                `;
+                return ft_iterButton(8, strArr);
             }
             else if (questionNumber === 12){
                 let strArr = ["16oz 컵 준비", "샷잔에 바닐라시럽 한 펌프 + 카라멜소스 38g 넣기", "샷잔에 에스프레소 추출 후 섞기", "빈 컵에 얼음 50% 넣기", "우유 200ml 준비 후 펌프질 50~60번 하기", "얼음 넣은 컵에 펌프질한 우유 반 넣기", "컵에 바닐라시럽, 카라멜소스 섞은 에스프레소 넣기", "컵에 나머지 우유 넣기", "격자무늬로 카라멜소스 드리즐 마무리"];
-                let classArr = ft_classArr(9);
-                let idxArr = ft_idxArr(9);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                <button class="button-game-button ${classArr[idxArr[6]]}">${strArr[idxArr[6]]}</button>
-                <button class="button-game-button ${classArr[idxArr[7]]}">${strArr[idxArr[7]]}</button>
-                <button class="button-game-button ${classArr[idxArr[8]]}">${strArr[idxArr[8]]}</button>
-                `;
+                return ft_iterButton(9, strArr);
             }
             else if (questionNumber === 13){
                 let strArr = ["12oz 컵 준비", "스팀피처 코선까지 우유 담고 녹차파우더 28g 넣기", "바스푼으로 젓기", "스팀피처의 우유 스티밍", "빈 머그잔에 스티밍한 녹차라떼 붓기"];
-                let classArr = ft_classArr(5);
-                let idxArr = ft_idxArr(5);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                `;
+                return ft_iterButton(5, strArr);
             }
             else if (questionNumber === 14){
                 let strArr = ["16oz 컵 준비", "스팀피처에 녹차파우더 30g 넣기", "스팀피처 코선까지 우유 붓고 바스푼으로 젓기", "스팀피처의 우유 살짝(미지근) 스티밍", "컵에 얼음 60% 채우기", "얼음이 담긴 컵에 셰이커의 녹차라떼 붓기"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 15){
                 let strArr = ["12oz 컵 준비", "스팀피처에 모닌초코소스 28g + 더블핫초콜릿파우더 28g 넣기", "스팀피처 코선까지 우유 붓고 바스푼으로 젓기", "스팀피처의 우유 스티밍", "빈 머그잔에 스티밍한 초코라떼 담기", "초콜릿가루(가니쉬) 뿌리기"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 16){
                 let strArr = ["16oz 컵 준비", "스팀피처에 모닌초코소스 28g + 더블핫초콜릿파우더 28g 넣기", "스팀피처 코선까지 우유 붓고 바스푼으로 젓기", "스팀피처의 우유 살짝(미지근) 스티밍", "바스푼으로 초콜릿소스 녹을 때까지 젓기", "컵에 얼음 80% 채우고 초코라떼 담기", "초콜릿가루(가니쉬) 뿌리기"];
-                let classArr = ft_classArr(7);
-                let idxArr = ft_idxArr(7);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                <button class="button-game-button ${classArr[idxArr[6]]}">${strArr[idxArr[6]]}</button>
-                `;
+                return ft_iterButton(7, strArr);
             }
             else if (questionNumber === 17){
                 let strArr = ["16oz 컵 준비", "바쉐이커에 뜨거운물 조금(1-2cm) 담기", "바쉐이커 아이스티 분말 55g 넣고 바스푼으로 젓기", "빈 컵에 얼음 80% 담고 아이스티 용액 넣기", "얼음잔에 정수물 가득 넣고 바스푼으로 가볍게 젓기"];
-                let classArr = ft_classArr(5);
-                let idxArr = ft_idxArr(5);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                `;
+                return ft_iterButton(5, strArr);
             }
             else if (questionNumber === 18){
                 let strArr = ["16oz 컵 준비", "빈 컵에 에이드청 80g 넣기", "에이드청 넣은 컵에 얼음 50% 넣기", "컵을 기울이고 사이다 1캔 붓기", "바스푼으로 탄산이 날아가지 않도록 살짝 젓기", "컵 가득 차도록 얼음 추가"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 19){
                 let strArr = ["16oz 컵 준비", "빈 컵에 에이드청 80g 넣기", "에이드청 넣은 컵에 얼음 50% 넣기", "컵을 기울이고 탄산수 1캔 붓기", "바스푼으로 탄산이 날아가지 않도록 살짝 젓기", "컵 가득 차도록 얼음 추가"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 20){
                 let strArr = ["12oz 컵 준비", "머그잔에 티백 1개 넣고 뜨거운물 가득 채우기", "티백 1분간 우리기"];
-                let classArr = ft_classArr(3);
-                let idxArr = ft_idxArr(3);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                `;
+                return ft_iterButton(3, strArr);
             }
             else if (questionNumber === 21){
                 let strArr = ["16oz 컵 준비", "소형포터필터에 티백 2개를 넣고 2분간 우리기", "빈 잔에 티백 1개 넣고 얼음 80% 넣기", "얼음잔에 우려낸 차 붓기", "컵 가득 정수물 채우기"];
-                let classArr = ft_classArr(5);
-                let idxArr = ft_idxArr(5);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                `;
+                return ft_iterButton(5, strArr);
             }
             else if (questionNumber === 22){
                 let strArr = ["12oz 컵 준비", "머그잔에 유자청 45g + 티백 1개 넣기", "뜨거운 물을 가득 채우고 1분간 우리기"];
-                let classArr = ft_classArr(3);
-                let idxArr = ft_idxArr(3);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                `;
+                return ft_iterButton(3, strArr);
             }
             else if (questionNumber === 23){
                 let strArr = ["16oz 컵 준비", "소형포터필터에 티백 2개를 넣고 2분간 우리기", "빈 잔에 유자청 50g + 티백 1개 넣기", "컵에 얼음 80% 채우고 우려낸 차 붓기", "컵 가득 정수물 채우기", "바스푼으로 청이 섞이도록 위아래로 젓기"];
-                let classArr = ft_classArr(6);
-                let idxArr = ft_idxArr(6);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                <button class="button-game-button ${classArr[idxArr[4]]}">${strArr[idxArr[4]]}</button>
-                <button class="button-game-button ${classArr[idxArr[5]]}">${strArr[idxArr[5]]}</button>
-                `;
+                return ft_iterButton(6, strArr);
             }
             else if (questionNumber === 24){
                 let strArr = ["16oz 컵 준비", "빈 컵에 미숫가루 30g + 슈가시럽 한 펌프 넣기", "컵에 두유 한 팩 넣고 섞이도록 젓기", "얼음 가득 채우기"];
-                let classArr = ft_classArr(4);
-                let idxArr = ft_idxArr(4);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                <button class="button-game-button ${classArr[idxArr[3]]}">${strArr[idxArr[3]]}</button>
-                `;
+                return ft_iterButton(4, strArr);
             }
             else if (questionNumber === 25){
                 let strArr = ["16oz 컵 준비", "빈 컵에 얼음 80% 넣기", "컵에 식혜 가득 채우기"];
-                let classArr = ft_classArr(3);
-                let idxArr = ft_idxArr(3);
-                return `
-                <button class="button-game-button ${classArr[idxArr[0]]}">${strArr[idxArr[0]]}</button>
-                <button class="button-game-button ${classArr[idxArr[1]]}">${strArr[idxArr[1]]}</button>
-                <button class="button-game-button ${classArr[idxArr[2]]}">${strArr[idxArr[2]]}</button>
-                `;
+                return ft_iterButton(3, strArr);
             }
             else { return `
                 만약 지금 이게 보이면
